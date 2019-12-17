@@ -14,18 +14,22 @@
   },
   "homepage": "https://github.com/Project-Rekt/engine#readme",
   "dependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.7.4",
     "express": "^4.17.1",
     "webpack": "^4.41.3",
     "webpack-cli": "^3.3.10"
   },
   "devDependencies": {
+    "@babel/core": "^7.7.5",
+    "@babel/preset-env": "^7.7.6",
+    "babel-loader": "^8.0.6",
     "concurrently": "^5.0.1",
     "html-webpack-plugin": "^3.2.0",
     "nodemon": "^2.0.2",
     "webpack-dev-server": "^3.9.0"
   },
   "scripts": {
-    "dev": "concurrently \"webpack-dev-server\" \"nodemon src/server/server.js\"",
+    "dev": "concurrently \"webpack-dev-server\"",
     "build": "webpack"
   }
 }
