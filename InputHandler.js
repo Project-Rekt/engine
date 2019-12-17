@@ -14,34 +14,30 @@ class InputHandler {
         this.mouseDown = this.mouseDown.bind(this);
         this.mouseUp = this.mouseUp.bind(this);
 
-        this.mouseMoveX = this.mouseMoveX.bind(this);
-        this.mouseMoveY = this.mouseMoveY.bind(this);
+        this.mouseMove = this.mouseMove.bind(this);
         
         this.startHandler = this.startHandler.bind(this);
         this.stopHandler = this.stopHandler.bind(this);
     }
 
     keyDown(event) {
-        this.input.keys[event.which] = true;
+        this.input.keys[event.code] = true;
     }
 
     keyUp(event) {
-        this.input.keys[event.which] = false;
+        this.input.keys[event.code] = false;
     }
 
     mouseDown(event) {
-        this.input.mouse[event.which] = true;
+        this.input.mouse[event.button] = true;
     }
 
     mouseUp(event) {
-        this.input.mouse[event.which] = false;
+        this.input.mouse[event.button] = false;
     }
 
-    mouseMoveX(event) {
+    mouseMove(event) {
         this.input.x = event.clientX;
-    }
-
-    mouseMoveY(event) {
         this.input.y = event.clientY;
     }
 
@@ -50,8 +46,7 @@ class InputHandler {
         this.elem.addEventListener("keyup", this.keyUp);
         this.elem.addEventListener("mousedown", this.mouseDown);
         this.elem.addEventListener("mouseup", this.mouseUp);
-        this.elem.addEventListener("mousemove", this.mouseMoveX);
-        this.elem.addEventListener("mousemove", this.mouseMoveY);
+        this.elem.addEventListener("mousemove", this.mouseMove);
     }
 
     stopHandler() {
@@ -59,8 +54,7 @@ class InputHandler {
         this.elem.removeEventListener("keyup", this.keyUp);
         this.elem.removeEventListener("mousedown", this.mouseDown);
         this.elem.removeEventListener("mouseup", this.mouseUp);
-        this.elem.removeEventListener("mousemove", this.mouseMoveX);
-        this.elem.removeEventListener("mousemove", this.mouseMoveY);
+        this.elem.removeEventListener("mousemove", this.mouseMove);
     }
 
     keys() {
@@ -71,11 +65,11 @@ class InputHandler {
         return this.input.mouse;
     }
 
-    xpos() {
+    mouseX() {
         return this.input.x;
     }
 
-    ypos() {
+    mouseY() {
         return this.input.y;
     }
 }
