@@ -1,7 +1,6 @@
 # engine
 Game Engine - Currently on version MASON
 
-
 ## Getting Started
 ### Setup
 1. Clone this repo:
@@ -25,3 +24,6 @@ Run the webpack build script
 ```
 npm run build
 ```
+
+## Looking to Contribute?
+### Check out the contributors guide [here](docs/contributions.md)
