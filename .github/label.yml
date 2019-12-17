@@ -1,0 +1,10 @@
+docs: 
+- README.md
+- docs/**/*
+
+test:
+- tests/**/*
+
+feature:
+- src/lib/**/*
+
