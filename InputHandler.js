@@ -1,4 +1,4 @@
-export default class InputHandler {
+class InputHandler {
     constructor(elem, options){
         this.elem = elem;
         this.input = {
@@ -14,8 +14,8 @@ export default class InputHandler {
         this.mouseDown = this.mouseDown.bind(this);
         this.mouseUp = this.mouseUp.bind(this);
 
-        this.x = this.mouseMoveX.bind(this);
-        this.y = this.mouseMoveY.bind(this);
+        this.mouseMoveX = this.mouseMoveX.bind(this);
+        this.mouseMoveY = this.mouseMoveY.bind(this);
         
         this.startHandler = this.startHandler.bind(this);
         this.stopHandler = this.stopHandler.bind(this);
@@ -79,3 +79,5 @@ export default class InputHandler {
         return this.input.y;
     }
 }
+
+export default InputHandler;
