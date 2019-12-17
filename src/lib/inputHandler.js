@@ -1,5 +1,5 @@
 export default class InputHandler {
-    constructor(elem){
+    constructor(elem, events){
         this.elem = elem;
         this.input = {
             keys: [],
@@ -7,25 +7,27 @@ export default class InputHandler {
             x: 0,
             y: 0
         }
+        this.events = events;
     }
 
     keyDown = (event) => {
         this.input.keys[event.code] = true;
     }
 
-    keyUp= (event) => {
+    keyUp = (event) => {
         this.input.keys[event.code] = false;
     }
 
-    mouseDown= (event) => {
+    mouseDown = (event) => {
         this.input.mouse[event.button] = true;
+        
     }
 
-    mouseUp= (event) => {
+    mouseUp = (event) => {
         this.input.mouse[event.button] = false;
     }
 
-    mouseMove= (event) => {
+    mouseMove = (event) => {
         this.input.x = event.clientX;
         this.input.y = event.clientY;
     }
@@ -36,6 +38,12 @@ export default class InputHandler {
         this.elem.addEventListener("mousedown", this.mouseDown);
         this.elem.addEventListener("mouseup", this.mouseUp);
         this.elem.addEventListener("mousemove", this.mouseMove);
+        
+        if(this.events != null){
+            Object.keys(this.events).forEach((eventName) => {
+                this.elem.addEventListener(eventName, this.events[eventName]);
+            })
+        }
     }
 
     stopHandler() {
@@ -44,6 +52,16 @@ export default class InputHandler {
         this.elem.removeEventListener("mousedown", this.mouseDown);
         this.elem.removeEventListener("mouseup", this.mouseUp);
         this.elem.removeEventListener("mousemove", this.mouseMove);
+
+        if(this.events != null){
+            Object.keys(this.events).forEach((eventName) => {
+                this.elem.removeEventListener(eventName, this.events[eventName]);
+            })
+        }
+    }
+
+    setEvents(events) {
+        this.events = events;
     }
 
     keys() {

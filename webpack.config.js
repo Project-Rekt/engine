@@ -34,8 +34,9 @@ module.exports = {
             console.log(entry)
             return new HtmlWebpackPlugin({
                 title: `Project REKT Engine | TEST ${entry}`,
-                inject: true,
+                inject: 'body',
                 filename: `${entry}/index.html`,
+                template: `${entry}.html`,
                 chunks: [entry]
             })
         })
