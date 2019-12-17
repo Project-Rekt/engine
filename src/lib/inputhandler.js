@@ -1,5 +1,5 @@
-class InputHandler {
-    constructor(elem, options){
+export default class InputHandler {
+    constructor(elem){
         this.elem = elem;
         this.input = {
             keys: [],
@@ -7,36 +7,25 @@ class InputHandler {
             x: 0,
             y: 0
         }
-
-        this.keyUp = this.keyUp.bind(this);
-        this.keyDown = this.keyDown.bind(this);
-
-        this.mouseDown = this.mouseDown.bind(this);
-        this.mouseUp = this.mouseUp.bind(this);
-
-        this.mouseMove = this.mouseMove.bind(this);
-        
-        this.startHandler = this.startHandler.bind(this);
-        this.stopHandler = this.stopHandler.bind(this);
     }
 
-    keyDown(event) {
+    keyDown = (event) => {
         this.input.keys[event.code] = true;
     }
 
-    keyUp(event) {
+    keyUp= (event) => {
         this.input.keys[event.code] = false;
     }
 
-    mouseDown(event) {
+    mouseDown= (event) => {
         this.input.mouse[event.button] = true;
     }
 
-    mouseUp(event) {
+    mouseUp= (event) => {
         this.input.mouse[event.button] = false;
     }
 
-    mouseMove(event) {
+    mouseMove= (event) => {
         this.input.x = event.clientX;
         this.input.y = event.clientY;
     }
@@ -73,5 +62,3 @@ class InputHandler {
         return this.input.y;
     }
 }
-
-export default InputHandler;
