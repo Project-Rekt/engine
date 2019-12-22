@@ -26,10 +26,11 @@
     "concurrently": "^5.0.1",
     "html-webpack-plugin": "^3.2.0",
     "nodemon": "^2.0.2",
+    "parcel-bundler": "^1.12.4",
     "webpack-dev-server": "^3.9.0"
   },
   "scripts": {
-    "dev": "concurrently \"webpack-dev-server\"",
+    "dev": "parcel -p 8000 watch tests/**/*.html index.html --global main",
     "build": "webpack"
   }
 }

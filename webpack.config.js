@@ -19,14 +19,16 @@ module.exports = {
         filename: '[name].js'
     },
     devServer: {
-        contentBase: path.join(__dirname, 'dist'),
+        contentBase: [path.join(__dirname, 'src'), path.join(__dirname, 'tests'), path.join(__dirname, 'dist')],
+        inline: true,
+        hot: true,
         compress: true,
         port: 8000
     },
     plugins: [
         new HtmlWebpackPlugin({
             title: "Project REKT Engine | DEVELOPMENT",
-            inject: true,
+            inject: false,
             filename: 'index.html',
             chunks: ['index']
         }),

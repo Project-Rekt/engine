@@ -1,5 +1,5 @@
 export default class InputHandler {
-    constructor(elem, events){
+    constructor(elem, events) {
         this.elem = elem;
         this.input = {
             keys: [],
@@ -7,7 +7,24 @@ export default class InputHandler {
             x: 0,
             y: 0
         }
-        this.events = events;
+
+        this.events = {
+            "keydown": [this.keyDown],
+            "keyup": [this.keyUp],
+            "mousedown": [this.mouseDown],
+            "mouseup": [this.mouseUp],
+            "mousemove": [this.mouseMove]
+        };
+
+        Object.keys(events).forEach(function (eventName) {
+            if (this.events[eventName]) {
+                this.events[eventName] = this.events[eventName].concat(events[eventName].length ? events[eventName].map(fn => fn.bind(this)) : [events[eventName]]);
+            } else {
+                this.events[eventName] = events[eventName].length ? events[eventName].map(fn => fn.bind(this)) : [events[eventName]];
+            }
+        }.bind(this));
+
+        this.dynamicEvents = {};
     }
 
     keyDown = (event) => {
@@ -20,7 +37,7 @@ export default class InputHandler {
 
     mouseDown = (event) => {
         this.input.mouse[event.button] = true;
-        
+
     }
 
     mouseUp = (event) => {
@@ -32,36 +49,29 @@ export default class InputHandler {
         this.input.y = event.clientY;
     }
 
-    startHandler() {
-        this.elem.addEventListener("keydown", this.keyDown);
-        this.elem.addEventListener("keyup", this.keyUp);
-        this.elem.addEventListener("mousedown", this.mouseDown);
-        this.elem.addEventListener("mouseup", this.mouseUp);
-        this.elem.addEventListener("mousemove", this.mouseMove);
-        
-        if(this.events != null){
-            Object.keys(this.events).forEach((eventName) => {
-                this.elem.addEventListener(eventName, this.events[eventName]);
-            })
-        }
+    startHandler = () => {
+        this.dynamicEvents = {}
+        Object.keys(this.events).forEach(function (eventName) {
+            let dynamicEvent = function (event) {
+                this.events[eventName].forEach(function (fn) {
+                    fn.call(this, event);
+                }.bind(this))
+            }.bind(this)
+
+            this.dynamicEvents[eventName] = dynamicEvent;
+            this.elem.addEventListener(eventName, dynamicEvent);
+        }.bind(this));
     }
 
-    stopHandler() {
-        this.elem.removeEventListener("keydown", this.keyDown);
-        this.elem.removeEventListener("keyup", this.keyUp);
-        this.elem.removeEventListener("mousedown", this.mouseDown);
-        this.elem.removeEventListener("mouseup", this.mouseUp);
-        this.elem.removeEventListener("mousemove", this.mouseMove);
-
-        if(this.events != null){
-            Object.keys(this.events).forEach((eventName) => {
-                this.elem.removeEventListener(eventName, this.events[eventName]);
-            })
-        }
+    stopHandler = () => {
+        Object.keys(this.events).forEach((eventName) => {
+            this.elem.removeEventListener(eventName, this.dynamicEvents[eventName]);
+        });
+        this.dynamicEvents = {}
     }
 
     setEvents(events) {
-        this.events = events;
+        Object.assign(this.events, events);
     }
 
     keys() {
