@@ -1,0 +1,1 @@
+{"version":3,"sources":["../src/index.js"],"names":["console","log"],"mappings":"AAAAA,OAAO,CAACC,GAAR,CAAY,0BAAZ,EACA,4DADA,EAEA,mDAFA","file":"src.7ed060e2.js","sourceRoot":"../tests","sourcesContent":["console.log(\"%cMASON ENGINE:%cLOADED!\", \n\"background: cornflowerblue; color: white; font-size: 35px;\", \n\"background: green; color: white; font-size: 35px;\");\n"]}
