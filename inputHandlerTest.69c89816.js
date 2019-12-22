@@ -117,7 +117,7 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"src/lib/inputHandler.js":[function(require,module,exports) {
+})({"../../src/lib/inputHandler.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -244,7 +244,7 @@ function () {
 }();
 
 exports.default = InputHandler;
-},{}],"tests/inputHandlerTest/inputHandlerTest.js":[function(require,module,exports) {
+},{}],"inputHandlerTest.js":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -270,10 +270,9 @@ function addNotification(text) {
   Object.assign(child.style, {
     margin: 0
   });
-  notifications.appendChild(child);
-  setTimeout(function () {
-    notifications.removeChild(child);
-  }, 500);
+  notifications.appendChild(child); //setTimeout(() => {
+  //      notifications.removeChild(child);
+  //}, 500)
 } //Input with custom callbacks
 
 
@@ -303,7 +302,7 @@ function startHandler() {
 function stopHandler() {
   exampleInput.stopHandler();
 }
-},{"../../src/lib/inputHandler":"src/lib/inputHandler.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"../../src/lib/inputHandler":"../../src/lib/inputHandler.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -331,7 +330,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "40681" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "37251" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
@@ -507,5 +506,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","tests/inputHandlerTest/inputHandlerTest.js"], "main")
+},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","inputHandlerTest.js"], "main")
 //# sourceMappingURL=/inputHandlerTest.69c89816.js.map

@@ -117,74 +117,192 @@ parcelRequire = (function (modules, cache, entry, globalName) {
   }
 
   return newRequire;
-})({"node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
-var bundleURL = null;
+})({"src/lib/inputHandler.js":[function(require,module,exports) {
+"use strict";
 
-function getBundleURLCached() {
-  if (!bundleURL) {
-    bundleURL = getBundleURL();
-  }
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.default = void 0;
 
-  return bundleURL;
-}
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-function getBundleURL() {
-  // Attempt to find the URL of the current script and use that as the base URL
-  try {
-    throw new Error();
-  } catch (err) {
-    var matches = ('' + err.stack).match(/(https?|file|ftp|chrome-extension|moz-extension):\/\/[^)\n]+/g);
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
 
-    if (matches) {
-      return getBaseURL(matches[0]);
-    }
-  }
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
-  return '/';
-}
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
-function getBaseURL(url) {
-  return ('' + url).replace(/^((?:https?|file|ftp|chrome-extension|moz-extension):\/\/.+)\/[^/]+$/, '$1') + '/';
-}
+var InputHandler =
+/*#__PURE__*/
+function () {
+  function InputHandler(elem, events) {
+    var _this = this;
 
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-},{}],"node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
-var bundle = require('./bundle-url');
+    _classCallCheck(this, InputHandler);
 
-function updateLink(link) {
-  var newLink = link.cloneNode();
+    _defineProperty(this, "keyDown", function (event) {
+      _this.input.keys[event.code] = true;
+    });
 
-  newLink.onload = function () {
-    link.remove();
-  };
+    _defineProperty(this, "keyUp", function (event) {
+      _this.input.keys[event.code] = false;
+    });
 
-  newLink.href = link.href.split('?')[0] + '?' + Date.now();
-  link.parentNode.insertBefore(newLink, link.nextSibling);
-}
+    _defineProperty(this, "mouseDown", function (event) {
+      _this.input.mouse[event.button] = true;
+    });
 
-var cssTimeout = null;
+    _defineProperty(this, "mouseUp", function (event) {
+      _this.input.mouse[event.button] = false;
+    });
 
-function reloadCSS() {
-  if (cssTimeout) {
-    return;
-  }
+    _defineProperty(this, "mouseMove", function (event) {
+      _this.input.x = event.clientX;
+      _this.input.y = event.clientY;
+    });
 
-  cssTimeout = setTimeout(function () {
-    var links = document.querySelectorAll('link[rel="stylesheet"]');
+    _defineProperty(this, "startHandler", function () {
+      _this.dynamicEvents = {};
+      Object.keys(_this.events).forEach(function (eventName) {
+        var dynamicEvent = function (event) {
+          this.events[eventName].forEach(function (fn) {
+            fn.call(this, event);
+          }.bind(this));
+        }.bind(this);
 
-    for (var i = 0; i < links.length; i++) {
-      if (bundle.getBaseURL(links[i].href) === bundle.getBundleURL()) {
-        updateLink(links[i]);
+        this.dynamicEvents[eventName] = dynamicEvent;
+        this.elem.addEventListener(eventName, dynamicEvent);
+      }.bind(_this));
+    });
+
+    _defineProperty(this, "stopHandler", function () {
+      Object.keys(_this.events).forEach(function (eventName) {
+        _this.elem.removeEventListener(eventName, _this.dynamicEvents[eventName]);
+      });
+      _this.dynamicEvents = {};
+    });
+
+    this.elem = elem;
+    this.input = {
+      keys: [],
+      mouse: [],
+      x: 0,
+      y: 0
+    };
+    this.events = {
+      "keydown": [this.keyDown],
+      "keyup": [this.keyUp],
+      "mousedown": [this.mouseDown],
+      "mouseup": [this.mouseUp],
+      "mousemove": [this.mouseMove]
+    };
+    Object.keys(events).forEach(function (eventName) {
+      var _this2 = this;
+
+      if (this.events[eventName]) {
+        this.events[eventName] = this.events[eventName].concat(events[eventName].length ? events[eventName].map(function (fn) {
+          return fn.bind(_this2);
+        }) : [events[eventName]]);
+      } else {
+        this.events[eventName] = events[eventName].length ? events[eventName].map(function (fn) {
+          return fn.bind(_this2);
+        }) : [events[eventName]];
       }
-    }
+    }.bind(this));
+    this.dynamicEvents = {};
+  }
 
-    cssTimeout = null;
-  }, 50);
+  _createClass(InputHandler, [{
+    key: "setEvents",
+    value: function setEvents(events) {
+      Object.assign(this.events, events);
+    }
+  }, {
+    key: "keys",
+    value: function keys() {
+      return this.input.keys;
+    }
+  }, {
+    key: "mouse",
+    value: function mouse() {
+      return this.input.mouse;
+    }
+  }, {
+    key: "mouseX",
+    value: function mouseX() {
+      return this.input.x;
+    }
+  }, {
+    key: "mouseY",
+    value: function mouseY() {
+      return this.input.y;
+    }
+  }]);
+
+  return InputHandler;
+}();
+
+exports.default = InputHandler;
+},{}],"tests/inputHandlerTest/inputHandlerTest.js":[function(require,module,exports) {
+"use strict";
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.startHandler = startHandler;
+exports.stopHandler = stopHandler;
+
+var _inputHandler = _interopRequireDefault(require("../../src/lib/inputHandler"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function addNotification(text) {
+  var notifications = document.querySelector('.notifications');
+
+  if (notifications.childNodes.length > 3) {
+    notifications.innerHTML = "";
+  }
+
+  var child = document.createElement('div');
+  child.innerHTML = text;
+  child.classList = "notification is-info";
+  Object.assign(child.style, {
+    margin: 0
+  });
+  notifications.appendChild(child); //setTimeout(() => {
+  //      notifications.removeChild(child);
+  //}, 500)
+} //Input with custom callbacks
+
+
+var events = {
+  "keydown": [function () {
+    addNotification("Key Down!");
+  }],
+  "keyup": function keyup() {
+    addNotification("Key up!");
+  },
+  "mousedown": [function () {
+    addNotification("Mouse button down!");
+  }],
+  "mouseup": function mouseup() {
+    addNotification("Mouse button up!");
+  },
+  "mousemove": function mousemove() {
+    addNotification("Mouse moving!");
+  }
+};
+var exampleInput = new _inputHandler.default(document.querySelector('body'), events);
+
+function startHandler() {
+  exampleInput.startHandler();
 }
 
-module.exports = reloadCSS;
-},{"./bundle-url":"node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+function stopHandler() {
+  exampleInput.stopHandler();
+}
+},{"../../src/lib/inputHandler":"src/lib/inputHandler.js"}],"node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
@@ -388,5 +506,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js"], "main")
-//# sourceMappingURL=/tests/inputHandlerTest/index.js.map
+},{}]},{},["node_modules/parcel-bundler/src/builtins/hmr-runtime.js","tests/inputHandlerTest/inputHandlerTest.js"], "main")
+//# sourceMappingURL=/tests/inputHandlerTest/inputHandlerTest.js.map
