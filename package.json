@@ -1,0 +1,15 @@
+{
+    "name": "engine",
+    "version": "0.0.1",
+    "description": "Engine for Project Rekt",
+    "main": "export.js",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Project-Rekt/engine.git"
+    },
+    "license": "Apache-2.0",
+    "bugs": {
+        "url": "https://github.com/Project-Rekt/engine/issues"
+    },
+    "homepage": "https://github.com/Project-Rekt/engine#readme"
+}
