@@ -1,7 +1,7 @@
 import Actor from './lib/actor'
 import InputHandler from './lib/inputHandler'
 
-export default {
+export {
     Actor,
     InputHandler
 }
