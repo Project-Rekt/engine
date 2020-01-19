@@ -1,6 +1,11 @@
 # engine
 Game Engine - Currently on version MASON
 
+## Installation
+```
+npm add Project-Rekt/engine
+```
+
 ## Getting Started
 ### Setup
 1. Clone this repo:
