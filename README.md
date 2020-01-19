@@ -6,6 +6,11 @@ Game Engine - Currently on version MASON
 npm i Project-Rekt/engine#dist
 ```
 
+## Generating a new dist
+```
+npm run publish
+```
+
 ## Getting Started
 ### Setup
 1. Clone this repo:
