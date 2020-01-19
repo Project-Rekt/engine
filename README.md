@@ -3,7 +3,7 @@ Game Engine - Currently on version MASON
 
 ## Installation
 ```
-npm add Project-Rekt/engine
+npm i Project-Rekt/engine#dist
 ```
 
 ## Getting Started
