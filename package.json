@@ -2,7 +2,7 @@
   "name": "engine",
   "version": "0.0.1",
   "description": "Game engine for Project Rekt",
-  "main": "dist/export.js",
+  "main": "export.js",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Project-Rekt/engine.git"
@@ -13,28 +13,28 @@
     "url": "https://github.com/Project-Rekt/engine/issues"
   },
   "homepage": "https://github.com/Project-Rekt/engine#readme",
-  "dependencies": {
-    "@babel/cli": "^7.8.3",
-    "@babel/plugin-proposal-class-properties": "^7.8.3",
-    "express": "^4.17.1",
-    "webpack": "^4.41.5",
-    "webpack-cli": "^3.3.10"
-  },
   "devDependencies": {
+    "@babel/cli": "^7.8.3",
     "@babel/core": "^7.8.3",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
     "@babel/preset-env": "^7.8.3",
     "babel-loader": "^8.0.6",
     "concurrently": "^5.0.2",
+    "express": "^4.17.1",
     "gh-pages": "^2.2.0",
     "html-webpack-plugin": "^3.2.0",
     "nodemon": "^2.0.2",
     "parcel-bundler": "^1.12.4",
+    "webpack": "^4.41.5",
+    "webpack-cli": "^3.3.10",
     "webpack-dev-server": "^3.10.1"
   },
   "scripts": {
     "dev": "webpack-dev-server --config webpack.development.config.js --hot",
     "build": "webpack --config webpack.production.config.js",
-    "build-dist": "babel src --out-dir dist",
+    "build-babel": "babel src --out-dir dist",
+    "build-dist": "node scripts/build-dist/build-dist.js",
+    "publish": "npm run build-dist && gh-pages -d dist -b dist",
     "deploy": "npm run build && gh-pages -d dist -b gh-pages"
   }
 }
