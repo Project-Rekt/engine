@@ -5,7 +5,7 @@ export default class Actor{
         this.ctx;
 
         //Dimensions of actor (has default bounds)
-        this.bounds = bounds | {x: 0, y: 0, width: 0, height: 0};
+        this.bounds = bounds || {x: 0, y: 0, width: 0, height: 0};
     }
 
     render = (deltaTime) => {
