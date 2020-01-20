@@ -18,6 +18,14 @@ module.exports = {
         path: path.join(__dirname, 'dep'),
         filename: '[name].bundle.js'
     },
+    devServer: {
+        watchContentBase: true,
+        contentBase: [path.join(__dirname, 'src'), path.join(__dirname, 'tests')],
+        inline: true,
+        hot: true,
+        compress: true,
+        port: 8000
+    },
     plugins: [
         new HtmlWebpackPlugin({
             title: "Project REKT Engine | DEVELOPMENT",
@@ -43,6 +51,14 @@ module.exports = {
                 test: /\.(js)$/,
                 exclude: /node_modules/,
                 use: ['babel-loader']
+            },
+            {
+                test: /\.(css)$/,
+                use: ['style-loader', 'css-loader']
+            },
+            {
+                tests: /\.(png|jpg|gif|svg)$/,
+                use: ['file-loader']
             }
         ]
     },

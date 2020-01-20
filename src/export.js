@@ -1,12 +1,11 @@
-import Actor from './lib/actor'
-import InputHandler from './lib/inputHandler'
+import actor from './lib/actor'
+import stage from './lib/stage'
+import inputHandler from './lib/inputHandler'
 
 export default {
-    Actor,
-    InputHandler
+    Actor: actor,
+    InputHandler: inputHandler,
+    Stage: stage
 };
 
-export {
-    Actor,
-    InputHandler
-};
+export let Actor = actor, Stage = stage, InputHandler = inputHandler;
