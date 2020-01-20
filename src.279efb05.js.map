@@ -1,1 +1,0 @@
-{"version":3,"sources":["src/index.js"],"names":["console","log"],"mappings":";AAAAA,QAAQC,IAAI,2BACZ,6DACA","file":"src.279efb05.js","sourceRoot":"..","sourcesContent":["console.log(\"%cMASON ENGINE:%cLOADED!\", \n\"background: cornflowerblue; color: white; font-size: 35px;\", \n\"background: green; color: white; font-size: 35px;\");\n"]}
