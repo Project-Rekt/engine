@@ -19,6 +19,9 @@ class Ball extends Actor {
         this.bounds.width = 10;
         this.bounds.height = 10;
         this.ay = 0.05;
+        this.ax = 0.001;
+
+        this.vx = 0;
         this.vy = 0;
 
         this.px = this.bounds.x;
@@ -45,13 +48,19 @@ class Ball extends Actor {
         let p = collisions.find(c => c instanceof Platform);
         if (p) {
             console.log("BOOM")
-            this.bounds.y = p.bounds.y - this.bounds.height;
+            if (this.vy > 0)
+                this.bounds.y = p.bounds.y - this.bounds.height;
+            else
+                this.bounds.y = p.bounds.y + this.bounds.height;
             this.vy *= -0.75;
         }
 
         //update position
         this.vy += this.ay;
         this.bounds.y += this.vy;
+
+        this.vx += this.ax;
+        this.bounds.x += this.vx;
     }
 }
 
@@ -61,8 +70,9 @@ let inp = new InputHandler(document.querySelector('#main'), {
         stage.addActor(new Ball({ x: this.input.x, y: this.input.y }), 1);
     }
 });
-stage.addActor(new Platform({ x: 0, y: 500, width: 400, height: 10 }))
-stage.addActor(new Platform({ x: 100, y: 300, width: 400, height: 10 }))
+stage.addActor(new Platform({ x: 150, y: 300, width: 300, height: 10 }))
+stage.addActor(new Platform({ x: 50, y: 400, width: 300, height: 10 }))
+stage.addActor(new Platform({ x: 100, y: 500, width: 300, height: 10 }))
 
 /*
 for(let i = 0; i < 400; i += 15) {
