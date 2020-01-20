@@ -1,11 +1,11 @@
 export default class Actor{
-    constructor(stage, options){
+    constructor(bounds){
         //Add actor to stage and stage context
-        this.stage = stage;
-        this.ctx = stage.ctx;
+        this.stage;
+        this.ctx;
 
         //Dimensions of actor (has default bounds)
-        this.bounds = options.bounds | {x: 0, y: 0, width: 0, height: 0};
+        this.bounds = bounds | {x: 0, y: 0, width: 0, height: 0};
     }
 
     render = (deltaTime) => {
