@@ -15,7 +15,7 @@ module.exports = {
         ...testEntries
     },
     output: {
-        path: path.join(__dirname, 'dist'),
+        path: path.join(__dirname, 'dep'),
         filename: '[name].bundle.js'
     },
     plugins: [

@@ -35,6 +35,6 @@
     "build-babel": "babel src --out-dir dist",
     "build-dist": "node scripts/build-dist/build-dist.js",
     "publish": "npm run build-dist && gh-pages -d dist -b dist",
-    "deploy": "npm run build && gh-pages -d dist -b gh-pages"
+    "deploy": "npm run build && gh-pages -d dep -b gh-pages"
   }
 }
