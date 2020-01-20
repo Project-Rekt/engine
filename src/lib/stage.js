@@ -43,10 +43,10 @@ export default class Stage {
 
     //only works with physicsActors
     checkCollision = (actorA, actorB) => {
-        return (actorA.px < actorB.px + actorB.width &&
-            actorA.px + actorA.width > actorB.px &&
-            actorA.py < actorB.py + actorB.height &&
-            actorA.py + actorA.height > actorB.py)
+        return (actorA.bounds.x < actorB.bounds.x + actorB.bounds.width &&
+            actorA.bounds.x + actorA.bounds.width > actorB.bounds.x &&
+            actorA.bounds.y < actorB.bounds.y + actorB.bounds.height &&
+            actorA.bounds.y + actorA.bounds.height > actorB.bounds.y)
     }
 
     addActor = (actor, zIndex) => {
