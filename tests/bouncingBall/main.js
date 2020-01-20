@@ -1,5 +1,17 @@
 import Stage from '../../src/lib/stage';
 import Actor from '../../src/lib/actor';
+import InputHandler from '../../src/lib/inputHandler';
+
+class Platform extends Actor {
+    constructor(bounds) {
+        super(bounds);
+    }
+
+    render = () => {
+        this.ctx.fillStyle = "white";
+        this.ctx.fillRect(this.bounds.x, this.bounds.y, this.bounds.width, this.bounds.height);
+    }
+}
 
 class Ball extends Actor {
     constructor(bounds) {
@@ -17,7 +29,7 @@ class Ball extends Actor {
         //clearframe
         this.ctx.fillStyle = "black";
         this.ctx.fillRect(this.px, this.py, this.bounds.width, this.bounds.height);
-        
+
         this.px = Math.round(this.bounds.x);
         this.py = Math.round(this.bounds.y);
 
@@ -28,8 +40,12 @@ class Ball extends Actor {
 
     update = (dt) => {
         //check bounce 
-        if (this.bounds.y >= 390) {
-            this.bounds.y = 390;
+        // if (this.bounds.y >= 590) {
+        let collisions = this.stage.getCollisions(this);
+        let p = collisions.find(c => c instanceof Platform);
+        if (p) {
+            console.log("BOOM")
+            this.bounds.y = p.bounds.y - this.bounds.height;
             this.vy *= -0.75;
         }
 
@@ -40,9 +56,19 @@ class Ball extends Actor {
 }
 
 let stage = new Stage(document.querySelector('#main'));
+let inp = new InputHandler(document.querySelector('#main'), {
+    mousedown: function () {
+        stage.addActor(new Ball({ x: this.input.x, y: this.input.y }), 1);
+    }
+});
+stage.addActor(new Platform({ x: 0, y: 500, width: 400, height: 10 }))
+stage.addActor(new Platform({ x: 100, y: 300, width: 400, height: 10 }))
+
+/*
 for(let i = 0; i < 400; i += 15) {
     for(let j = 0; j < 50; j +=5) {
         stage.addActor(new Ball({ x: i, y: i + j}), j);
     }
-}
+}*/
 stage.start();
+inp.startHandler();

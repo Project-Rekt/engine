@@ -1,6 +1,11 @@
 export default class InputHandler {
     constructor(elem, events) {
         this.elem = elem;
+
+        this.elemBounds = elem.getBoundingClientRect();
+        this.offsetX = this.elemBounds.left;
+        this.offsetY = this.elemBounds.top;
+
         this.input = {
             keys: [],
             mouse: [],
@@ -16,13 +21,14 @@ export default class InputHandler {
             "mousemove": [this.mouseMove]
         };
 
-        Object.keys(events).forEach(function (eventName) {
-            if (this.events[eventName]) {
-                this.events[eventName] = this.events[eventName].concat(events[eventName].length ? events[eventName].map(fn => fn.bind(this)) : [events[eventName]]);
-            } else {
-                this.events[eventName] = events[eventName].length ? events[eventName].map(fn => fn.bind(this)) : [events[eventName]];
-            }
-        }.bind(this));
+        if (events)
+            Object.keys(events).forEach(function (eventName) {
+                if (this.events[eventName]) {
+                    this.events[eventName] = this.events[eventName].concat(events[eventName].length ? events[eventName].map(fn => fn.bind(this)) : [events[eventName]]);
+                } else {
+                    this.events[eventName] = events[eventName].length ? events[eventName].map(fn => fn.bind(this)) : [events[eventName]];
+                }
+            }.bind(this));
 
         this.dynamicEvents = {};
     }
@@ -45,8 +51,8 @@ export default class InputHandler {
     }
 
     mouseMove = (event) => {
-        this.input.x = event.clientX;
-        this.input.y = event.clientY;
+        this.input.x = event.clientX + this.offsetX;
+        this.input.y = event.clientY - this.offsetY;
     }
 
     startHandler = () => {
