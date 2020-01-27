@@ -50,6 +50,7 @@ export default class Stage {
     }
 
     addActor = (actor, zIndex) => {
+        actor.create()
         if (!zIndex)
             zIndex = 0;
         actor.stage = this;

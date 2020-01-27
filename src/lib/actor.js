@@ -8,6 +8,10 @@ export default class Actor{
         this.bounds = bounds || {x: 0, y: 0, width: 0, height: 0};
     }
 
+    create = () => {
+
+    }
+    
     render = (deltaTime) => {
 
     }
