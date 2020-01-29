@@ -93,11 +93,13 @@ export default class Stage {
     }
 
     start = () => {
+        this.create();
         window.requestAnimationFrame(this.callUpdateCycles);
         window.requestAnimationFrame(this.callRenderCycles);
     }
 
     stop = () => {
+        this.destroy();
         window.cancelAnimationFrame(this.callUpdateCycles);
         window.cancelAnimationFrame(this.callRenderCycles);
     }
@@ -135,5 +137,9 @@ export default class Stage {
                 child.update(deltaTime*0.05);
             }, this, deltaTime);
         }, this, deltaTime);
+    }
+
+    destroy = () => {
+        
     }
 }
