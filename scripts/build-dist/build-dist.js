@@ -27,7 +27,7 @@ async function aExec(script) {
                 res(file);
             });
         });
-        template = template.replace("$VERSION", "0.0.1")
+        template = template.replace("$VERSION", "0.0.2")
 
         //create new package.json
         await new Promise((res, rej) => {
