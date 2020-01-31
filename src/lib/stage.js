@@ -20,9 +20,6 @@ export default class Stage {
 
         //setup children
         this.children = {};
-
-        //run create
-        this.create();
     }
 
     getCollisions = (actor) => {
@@ -50,12 +47,13 @@ export default class Stage {
     }
 
     addActor = (actor, zIndex) => {
-        actor.create()
         if (!zIndex)
             zIndex = 0;
         actor.stage = this;
         actor.ctx = this.ctx;
         actor.zIndex = zIndex;
+        
+        actor.create()
 
         if (!this.children[zIndex])
             this.children[zIndex] = [];
