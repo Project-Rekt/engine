@@ -3,25 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-Object.defineProperty(exports, "Actor", {
-  enumerable: true,
-  get: function get() {
-    return _actor["default"];
-  }
-});
-Object.defineProperty(exports, "Stage", {
-  enumerable: true,
-  get: function get() {
-    return _stage["default"];
-  }
-});
-Object.defineProperty(exports, "InputHandler", {
-  enumerable: true,
-  get: function get() {
-    return _inputHandler["default"];
-  }
-});
-exports["default"] = void 0;
+exports.InputHandler = exports.Stage = exports.Actor = exports["default"] = void 0;
 
 var _actor = _interopRequireDefault(require("./lib/actor"));
 
@@ -37,3 +19,9 @@ var _default = {
   Stage: _stage["default"]
 };
 exports["default"] = _default;
+var Actor = _actor["default"],
+    Stage = _stage["default"],
+    InputHandler = _inputHandler["default"];
+exports.InputHandler = InputHandler;
+exports.Stage = Stage;
+exports.Actor = Actor;
