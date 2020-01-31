@@ -2,6 +2,10 @@
 const { exec } = require('child_process');
 const fs = require('fs');
 const path = require('path');
+const low = require('lowdb');
+const FileSync = require('lowdb/adapters/FileSync');
+
+const properties = low(new FileSync(path.join(__dirname, 'properties.json'))    );
 
 async function aExec(script) {
     return await new Promise((res, rej) => {
@@ -27,7 +31,14 @@ async function aExec(script) {
                 res(file);
             });
         });
-        template = template.replace("$VERSION", "0.0.2")
+        //get version and increment version
+        let version = properties.get("npm_version").value().toString();
+        let vstr = version.padStart(3, "0");
+        let versionString = vstr.split("").reduce((acc, val, i) => {
+            return acc + "." + val;
+        });
+        template = template.replace("$VERSION", versionString)
+        properties.set("npm_version", Number(version) + 1).write();
 
         //create new package.json
         await new Promise((res, rej) => {
