@@ -17,6 +17,8 @@
     "@babel/cli": "^7.8.3",
     "@babel/core": "^7.8.3",
     "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/plugin-transform-regenerator": "^7.8.3",
+    "@babel/plugin-transform-runtime": "^7.8.3",
     "@babel/preset-env": "^7.8.3",
     "babel-loader": "^8.0.6",
     "concurrently": "^5.0.2",
@@ -25,6 +27,7 @@
     "file-loader": "^5.0.2",
     "gh-pages": "^2.2.0",
     "html-webpack-plugin": "^3.2.0",
+    "lowdb": "^1.0.0",
     "nodemon": "^2.0.2",
     "parcel-bundler": "^1.12.4",
     "style-loader": "^1.1.3",
@@ -39,5 +42,6 @@
     "build-dist": "node scripts/build-dist/build-dist.js",
     "publish": "npm run build-dist && gh-pages -d dist -b dist",
     "deploy": "npm run build && gh-pages -d dep -b gh-pages"
-  }
+  },
+  "dependencies": {}
 }
