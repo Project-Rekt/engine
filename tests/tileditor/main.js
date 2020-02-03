@@ -39,58 +39,55 @@ let inp = new InputHandler(document.querySelector("#main"), {
         console.log(rows[i]);
         let gridX = Math.floor((x - rows[i][0]) / 32) * 32;
         let gridY = Math.floor((y - rows[i][3]) / 32) * 32;
-        stage.addActor(
-          //Draw top horizontal line
-          new Grid(
-            gridX + rows[i][0],
-            rows[i][3],
-            gridX + rows[i][0] + 32,
-            rows[i][3],
-            "red"
-          )
+        // stage.addActor(
+        //   //Draw top horizontal line
+        //   new Grid(
+        //     gridX + rows[i][0],
+        //     rows[i][3],
+        //     gridX + rows[i][0] + 32,
+        //     rows[i][3],
+        //     "red"
+        //   )
+        // );
+        // stage.addActor(
+        //   //draw left vertical line
+        //   new Grid(
+        //     gridX + rows[i][0],
+        //     rows[i][3],
+        //     gridX + rows[i + 1][0],
+        //     rows[i][2],
+        //     "red"
+        //   )
+        // );
+        // stage.addActor(
+        //   //
+        //   new Grid(
+        //     gridX + rows[i][0] + 32,
+        //     rows[i][3],
+        //     gridX + rows[i][0] + 32 - 29.002,
+        //     rows[i][2],
+        //     "red"
+        //   )
+        // );
+        // stage.addActor(
+        //   new Grid(
+        //     gridX + rows[i][0] - 29.002,
+        //     rows[i][2],
+        //     gridX + rows[i][0] - 29.002 + 32,
+        //     rows[i][2],
+        //     "red"
+        //   )
+        // );
+
+        let monkey = await loadImage(
+          "/" + require("./Code-Monkey.png").default
         );
-        stage.addActor(
-          //draw left vertical line
-          new Grid(
-            gridX + rows[i][0],
-            rows[i][3],
-            gridX + rows[i + 1][0],
-            rows[i][2],
-            "red"
-          )
-        );
-        stage.addActor(
-          //
-          new Grid(
-            gridX + rows[i][0] + 32,
-            rows[i][3],
-            gridX + rows[i][0] + 32 - 29.002,
-            rows[i][2],
-            "red"
-          )
-        );
-        stage.addActor(
-          new Grid(
-            gridX + rows[i][0] - 29.002,
-            rows[i][2],
-            gridX + rows[i][0] - 29.002 + 32,
-            rows[i][2],
-            "red"
-          )
-        );
-        stage.ctx.drawImage(monkey, rows[i][0], rows[i][3]);
+        stage.ctx.drawImage(monkey, gridX + rows[i][0] - 20, rows[i][3] - 16);
         break;
       }
     }
   }
 });
-
-for (let i = 0; i <= 15; i++) {
-  //drawing vertical lines
-  stage.addActor(
-    new Grid(600.032 + 32 * i, 100, 20 + 32 * i, 370.476, "black")
-  );
-}
 
 async function loadImage(src) {
   let img = new Image();
@@ -101,7 +98,13 @@ async function loadImage(src) {
     };
   });
 }
-let monkey = loadImage("Code-Monkey.png");
+
+for (let i = 0; i <= 15; i++) {
+  //drawing vertical lines
+  stage.addActor(
+    new Grid(600.032 + 32 * i, 100, 20 + 32 * i, 370.476, "black")
+  );
+}
 
 let rows = new Array(20);
 rows[0] = [1080, 600, 113.52, 98];
