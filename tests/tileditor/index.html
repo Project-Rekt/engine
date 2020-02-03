@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Tile Editor</title>
+    </head>
+    <body>
+        <div><h1>Tile Editor</h1></div>
+        <input type="file" id="myFile">
+        <div><canvas id="main" width= 1100.037 height=470.476 style="background-color: white;"></canvas></div>
+    </body>
+    <script>
+        function draw(){
+            var drawing = document.getElementById('main')
+            var con = drawing.getContext("2d")
+            var map = document.getElementById("myFile")
+            con.drawImage(map, 0, 0, 0, 0)
+        }
+    </script>
+</html>
