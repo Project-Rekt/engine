@@ -10,18 +10,17 @@ const properties = low(new FileSync(path.join(__dirname, 'properties.json'))    
 async function aExec(script) {
     return await new Promise((res, rej) => {
         exec(script, (err, stdout, stderr) => {
-            if (err)
-                rej(err);
-            console.log(stdout ? stdout : stderr);
-            res(stdout || stderr);
-        });
-    });
+            if (err) rej(err)
+            console.log(stdout ? stdout : stderr)
+            res(stdout || stderr)
+        })
+    })
 }
 
-(async () => {
+;(async () => {
     try {
         //generate babel output
-        await aExec("npm run build-babel");
+        await aExec("npm run build-babel")
 
         //add in package.json template
         let template = await new Promise((res, rej) => {
@@ -42,19 +41,17 @@ async function aExec(script) {
 
         //create new package.json
         await new Promise((res, rej) => {
-            fs.writeFile("dist/package.json", template, (err) => {
-                if (err)
-                    rej(err);
-                console.log("Moved template package.json\n");
-                res(true);
+            fs.writeFile("dist/package.json", template, err => {
+                if (err) rej(err)
+                console.log("Moved template package.json\n")
+                res(true)
             })
-        });
+        })
 
         //generate lock file
-        await aExec("cd dist && npm i");
-        console.log("Successfully built distribution!\n");
-
+        await aExec("cd dist && npm i")
+        console.log("Successfully built distribution!\n")
     } catch (err) {
-        console.error(err);
+        console.error(err)
     }
-})();
+})()

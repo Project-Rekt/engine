@@ -30,6 +30,7 @@
     "lowdb": "^1.0.0",
     "nodemon": "^2.0.2",
     "parcel-bundler": "^1.12.4",
+    "prettier": "^1.19.1",
     "style-loader": "^1.1.3",
     "webpack": "^4.41.5",
     "webpack-cli": "^3.3.10",
@@ -37,6 +38,7 @@
   },
   "scripts": {
     "dev": "webpack-dev-server --config webpack.development.config.js --hot",
+    "format": "prettier --write **/*.{js,jsx}",
     "build": "webpack --config webpack.production.config.js",
     "build-babel": "babel src --out-dir dist",
     "build-dist": "node scripts/build-dist/build-dist.js",
