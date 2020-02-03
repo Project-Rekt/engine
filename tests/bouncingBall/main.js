@@ -32,6 +32,7 @@ class Ball extends Actor {
         //clearframe
         this.ctx.fillStyle = "black";
         this.ctx.fillRect(this.px, this.py, this.bounds.width, this.bounds.height);
+
         this.px = Math.round(this.bounds.x);
         this.py = Math.round(this.bounds.y);
 

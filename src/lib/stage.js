@@ -20,6 +20,9 @@ export default class Stage {
 
         //setup children
         this.children = {};
+
+        //run create
+        this.create();
     }
 
     getCollisions = (actor) => {
@@ -47,13 +50,12 @@ export default class Stage {
     }
 
     addActor = (actor, zIndex) => {
+        actor.create()
         if (!zIndex)
             zIndex = 0;
         actor.stage = this;
         actor.ctx = this.ctx;
         actor.zIndex = zIndex;
-        
-        actor.create()
 
         if (!this.children[zIndex])
             this.children[zIndex] = [];
@@ -91,13 +93,11 @@ export default class Stage {
     }
 
     start = () => {
-        this.create();
         window.requestAnimationFrame(this.callUpdateCycles);
         window.requestAnimationFrame(this.callRenderCycles);
     }
 
     stop = () => {
-        this.destroy();
         window.cancelAnimationFrame(this.callUpdateCycles);
         window.cancelAnimationFrame(this.callRenderCycles);
     }
@@ -114,7 +114,7 @@ export default class Stage {
         //call all children render cycles
         keys.forEach(function (layer) {
             this.children[layer].forEach(function (child) {
-                child.render(deltaTime)
+                child.render(deltaTime*0.05)
             }, this, deltaTime);
         }, this, deltaTime);
     }
@@ -132,12 +132,8 @@ export default class Stage {
         keys.forEach(function (layer) {
             this.children[layer].forEach(function (child) {
                 //console.log(deltaTime);
-                child.update(deltaTime);
+                child.update(deltaTime*0.05);
             }, this, deltaTime);
         }, this, deltaTime);
-    }
-
-    destroy = () => {
-        
     }
 }
