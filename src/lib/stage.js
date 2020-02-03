@@ -114,7 +114,7 @@ export default class Stage {
         //call all children render cycles
         keys.forEach(function (layer) {
             this.children[layer].forEach(function (child) {
-                child.render(deltaTime*0.05)
+                child.render(deltaTime)
             }, this, deltaTime);
         }, this, deltaTime);
     }
@@ -132,7 +132,7 @@ export default class Stage {
         keys.forEach(function (layer) {
             this.children[layer].forEach(function (child) {
                 //console.log(deltaTime);
-                child.update(deltaTime*0.05);
+                child.update(deltaTime);
             }, this, deltaTime);
         }, this, deltaTime);
     }
