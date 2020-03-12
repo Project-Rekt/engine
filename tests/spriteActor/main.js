@@ -14,7 +14,6 @@ class Goku extends SpriteActor {
 
         this.facing = "right";
 
-
         this.input = new InputHandler(document.querySelector('body'));
         this.input.startHandler();
     }
@@ -27,19 +26,19 @@ class Goku extends SpriteActor {
         if (this.input.keys()['ArrowLeft']) {
             //if (this.vx > -1)
             this.facing = "left";
-            this.vx -= 0.05;
+            this.bounds.x -= 5;
         } else if (this.input.keys()['ArrowRight']) {
             //if (this.vx < 1)
             this.facing = "right";
-            this.vx += 0.05;
+            this.bounds.x += 5;
         }
 
         if (this.input.keys()['ArrowUp']) {
             //if (this.vx > -1)
-            this.vy -= 0.05;
+            this.bounds.y -= 5;
         } else if (this.input.keys()['ArrowDown']) {
             //if (this.vx < 1)
-            this.vy += 0.05;
+            this.bounds.y += 5;
         }
 
         //update position

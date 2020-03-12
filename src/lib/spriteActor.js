@@ -44,15 +44,13 @@ export default class SpriteActor extends Actor {
     }
 
     render = (deltaTime) => {
+        this.ctx.fillStyle = "black";
+        this.ctx.fillRect(this.px, this.py, this.bounds.width * this.scale, this.bounds.height * this.scale);
+
         let sstate = this.states[this.currentState]
 
         this.renderCount += deltaTime;
         if (this.renderCount > (1000 / sstate.rps)) {
-            this.ctx.fillStyle = "black";
-            this.ctx.fillRect(this.px, this.py, this.bounds.width * this.scale, this.bounds.height * this.scale);
-
-            this.px = Math.round(this.bounds.x);
-            this.py = Math.round(this.bounds.y);
 
             this.renderCount = 0;
             if (this.frameCount >= sstate.frames.length) {
@@ -70,14 +68,15 @@ export default class SpriteActor extends Actor {
             }
             this.frameCount++;
         }
-
-        if (this.frame && this.current) {
+        this.px = Math.round(this.bounds.x);
+        this.py = Math.round(this.bounds.y);
+        if (this.frame) 
             this.ctx.drawImage(this.current, this.frame.x, this.frame.y, this.frame.width, this.frame.height, this.px, this.py, this.frame.width * this.scale, this.frame.height * this.scale);
-        }
+        
     }
 
     destroy = () => {
-        super.destroy();
+
         for (let i = 0; i < Object.keys(this.states).length; i++) {
             this.states[i].image == null;
         }
