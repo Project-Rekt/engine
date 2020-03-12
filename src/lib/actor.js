@@ -16,7 +16,7 @@ export default class Actor {
 
     destroy = () => {
         //Clear boundingbox
-        this.ctx.clearRect(this.x, this.y, this.width, this.height)
+        this.ctx.clearRect(this.bounds.x, this.bounds.y, this.bounds.width, this.bounds.height)
 
         //Remove actor from stage
         this.stage.removeActor(this)
