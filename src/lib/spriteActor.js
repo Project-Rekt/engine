@@ -10,13 +10,13 @@ async function loadImage(src) {
     });
 }
 
-export default class SpriteActor extends Actor{
-    constructor(bounds, spriteObj){
+export default class SpriteActor extends Actor {
+    constructor(bounds, spriteObj) {
         super(bounds);
         this.properties = spriteObj.properties || {};
-        this.states = spriteObj.states || {idle: {location: null, rps: 5, loop: true, frames: [{x: 0, y: 0, width: 0, height: 0}]}};
-        
-        this.currentState = this.states[0]
+        this.states = spriteObj.states || { idle: { location: null, rps: 5, loop: true, frames: [{ x: 0, y: 0, width: 0, height: 0 }] } };
+
+        this.currentState = Object.keys(this.states)[0] || "idle"
         this.frameCount = 0;
         this.renderCount = 0;
         this.scale = 2;
@@ -32,51 +32,53 @@ export default class SpriteActor extends Actor{
     }
 
     create = () => {
-        if(this.states != {} && this.properties != {}){
+        if (this.states != {} && this.properties != {}) {
             (async () => {
-                await Promise.all(Object.keys(sprites.states).map(async (s) => {
-                    let img = await loadImage(sprites.states[s].location);
-                    Object.assign(sprites.states[s], { image: img });
+                await Promise.all(Object.keys(this.states).map(async (s) => {
+                    let img = await loadImage(this.states[s].location);
+                    Object.assign(this.states[s], { image: img });
                 }));
-                console.log(sprites);
+                console.log(this.states);
             })()
         }
     }
 
     render = (deltaTime) => {
+        let sstate = this.states[this.currentState]
 
-        this.ctx.fillStyle = "black";
-        this.ctx.fillRect(this.px, this.py, this.bounds.width * this.scale, this.bounds.height * this.scale);
+        this.renderCount += deltaTime;
+        if (this.renderCount > (1000 / sstate.rps)) {
+            this.ctx.fillStyle = "black";
+            this.ctx.fillRect(this.px, this.py, this.bounds.width * this.scale, this.bounds.height * this.scale);
 
-        this.px = Math.round(this.bounds.x);
-        this.py = Math.round(this.bounds.y);
+            this.px = Math.round(this.bounds.x);
+            this.py = Math.round(this.bounds.y);
 
-        let sstate = sprites.states[this.state]
-
-        this.renderCount += deltaTime
-        if(this.renderCount > (1000 / sstate.rps)){
             this.renderCount = 0;
-            if(this.frameCount >= sstate.frames.length){
+            if (this.frameCount >= sstate.frames.length) {
                 this.frameCount = 0;
 
-                if(!sstate.loop){
+                if (!sstate.loop) {
                     this.changeState("idle");
                 }
             }
             this.frame = sstate.frames[this.frameCount];
             this.bounds.width = this.frame.width * this.scale;
             this.bounds.height = this.frame.height * this.scale;
-            if(sstate.image){
+            if (sstate.image) {
                 this.current = sstate.image;
             }
             this.frameCount++;
         }
-        this.ctx.save();
+
+        if (this.frame && this.current) {
+            this.ctx.drawImage(this.current, this.frame.x, this.frame.y, this.frame.width, this.frame.height, this.px, this.py, this.frame.width * this.scale, this.frame.height * this.scale);
+        }
     }
 
     destroy = () => {
         super.destroy();
-        for(let i = 0; i < Object.keys(this.states).length; i++){
+        for (let i = 0; i < Object.keys(this.states).length; i++) {
             this.states[i].image == null;
         }
     }
