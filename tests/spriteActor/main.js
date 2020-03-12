@@ -19,6 +19,10 @@ class Goku extends SpriteActor {
     }
 
     update = (dt) => {
+        if(this.input.keys()['KeyD']) {
+            this.destroy();
+        }
+
         if (this.input.keys()['KeyA']) {
             this.changeState("fight");
         }

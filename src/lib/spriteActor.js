@@ -75,11 +75,12 @@ export default class SpriteActor extends Actor {
         
     }
 
-    destroy = () => {
-
+    destroy() {
         for (let i = 0; i < Object.keys(this.states).length; i++) {
-            this.states[i].image == null;
+            console.log(this.states[Object.keys(this.states)[i]])
+            this.states[Object.keys(this.states)[i]].image == null;
         }
+        super.destroy();
     }
 
 
