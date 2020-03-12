@@ -63,7 +63,6 @@ export default class Stage {
     }
 
     removeActor = actor => {
-        actor.destroy()
         let index = this.children[actor.zIndex].findIndex(a => a === actor)
         this.children[actor.zIndex].splice(index, 1)
     }
