@@ -18,6 +18,11 @@ npm run publish
 git clone git@github.com:Project-Rekt/engine.git
 ```
 
+If you are not setup with ssh keys use https
+```
+git clone https://github.com/Project-Rekt/engine.git
+```
+
 2. Install dependencies within the project directory: 
 ```
 npm install
