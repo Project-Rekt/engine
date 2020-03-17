@@ -1,68 +1,73 @@
-const path = require('path');
-const glob = require('glob');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require("path")
+const glob = require("glob")
+const HtmlWebpackPlugin = require("html-webpack-plugin")
 
-let testEntries = glob.sync('./tests/**/*.js').reduce((acc, path) => {
-    let entry = path.replace(new RegExp(/\/(.[^\/])+\.js$/g), '').replace('./', '');
-    acc[entry] = path;
-    return acc;
-}, {});
+let testEntries = glob.sync("./tests/**/*.js").reduce((acc, path) => {
+    let entry = path
+        .replace(new RegExp(/\/(.[^\/])+\.js$/g), "")
+        .replace("./", "")
+    acc[entry] = path
+    return acc
+}, {})
 
 module.exports = {
-    mode: 'production',
+    mode: "production",
     entry: {
-        index: path.join(__dirname, 'src/index.js'),
-        ...testEntries
+        index: path.join(__dirname, "src/index.js"),
+        ...testEntries,
     },
     output: {
-        path: path.join(__dirname, 'dep'),
-        filename: '[name].bundle.js'
+        path: path.join(__dirname, "dep"),
+        filename: "[name].bundle.js",
     },
     devServer: {
         watchContentBase: true,
-        contentBase: [path.join(__dirname, 'src'), path.join(__dirname, 'tests')],
+        contentBase: [
+            path.join(__dirname, "src"),
+            path.join(__dirname, "tests"),
+        ],
         inline: true,
         hot: true,
         compress: true,
-        port: 8000
+        port: 8000,
     },
     plugins: [
         new HtmlWebpackPlugin({
             title: "Project REKT Engine | DEVELOPMENT",
             inject: true,
-            filename: 'index.html',
-            template: path.join(__dirname, 'src/index.html'),
-            chunks: ['index']
+            filename: "index.html",
+            template: path.join(__dirname, "src/index.html"),
+            chunks: ["index"],
         }),
         ...Object.keys(testEntries).map(entry => {
-            console.log(entry);
+            console.log(entry)
             return new HtmlWebpackPlugin({
                 title: `Project REKT Engine | TEST ${entry}`,
                 inject: true,
                 template: `${entry}/index.html`,
                 filename: `${entry}/index.html`,
-                chunks: [entry]
+                chunks: [entry],
             })
-        })
+        }),
     ],
     module: {
         rules: [
             {
                 test: /\.(js)$/,
                 exclude: /node_modules/,
-                use: ['babel-loader']
+                use: ["babel-loader"],
             },
             {
                 test: /\.(css)$/,
-                use: ['style-loader', 'css-loader']
+                use: ["style-loader", "css-loader"],
             },
             {
                 tests: /\.(png|jpg|gif|svg)$/,
-                use: ['file-loader']
-            }
-        ]
+                use: ["file-loader"],
+            },
+        ],
     },
     resolve: {
-        extensions: ['*', '.js']
-    }
-};
+        extensions: ["*", ".js"],
+    },
+}
