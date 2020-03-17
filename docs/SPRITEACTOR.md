@@ -70,6 +70,7 @@ This function gets called every update tick. The time passed from the last updat
 
 ### destroy() 
 <<<<<<< HEAD
+<<<<<<< HEAD
 This function is called once, on Actor removal. By default, it clears the Actor's drawbox and removes it from the Stage.
 
 ## Example Class
@@ -86,6 +87,8 @@ class CoolActor extends Engine.Actor {
         this.ctx.fillStyle="red";
         this.ctx.fillRect(this.bounds.x, this.bounds.y, this.bounds.width, this.bounds.height)
 =======
+=======
+>>>>>>> aa1851b4889d88b342d926db7ea224c2932cf97f
 This function is called once, on Actor removal. By default, it clears the SpriteActor's last drawn sprite and removes it from the Stage. Additionally it deletes all loaded sprite images.
 
 ## Example Class
@@ -142,7 +145,10 @@ class Goku extends SpriteActor {
 
         this.vx += this.ax;
         this.bounds.x += this.vx;
+<<<<<<< HEAD
 >>>>>>> origin/develop
+=======
+>>>>>>> aa1851b4889d88b342d926db7ea224c2932cf97f
     }
 }
 ```
