@@ -2,7 +2,8 @@ const path = require("path")
 const glob = require("glob")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
 
-let testEntries = glob.sync("./tests/**/*.js").reduce((acc, path) => {
+let testEntries = glob.sync("./tests/**/main.js").reduce((acc, path) => {
+    console.log(path);
     let entry = path
         .replace(new RegExp(/\/(.[^\/])+\.js$/g), "")
         .replace("./", "")
@@ -11,7 +12,7 @@ let testEntries = glob.sync("./tests/**/*.js").reduce((acc, path) => {
 }, {})
 
 module.exports = {
-    mode: "production",
+    mode: "development",
     entry: {
         index: path.join(__dirname, "src/index.js"),
         ...testEntries,
@@ -59,10 +60,10 @@ module.exports = {
             },
             {
                 test: /\.(css)$/,
-                use: ["style-loader", "css-loader"],
+                use: ['style-loader','css-loader']
             },
             {
-                tests: /\.(png|jpg|gif|svg)$/,
+                test: /\.(png|svg|jpg|gif)$/,
                 use: ["file-loader"],
             },
         ],

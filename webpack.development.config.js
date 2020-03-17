@@ -2,7 +2,8 @@ const path = require("path")
 const glob = require("glob")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
 
-let testEntries = glob.sync("./tests/**/*.js").reduce((acc, path) => {
+let testEntries = glob.sync("./tests/**/main.js").reduce((acc, path) => {
+    console.log(path);
     let entry = path
         .replace(new RegExp(/\/(.[^\/])+\.js$/g), "")
         .replace("./", "")
