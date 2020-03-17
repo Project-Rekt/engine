@@ -1,6 +1,7 @@
 import Stage from "../../src/lib/stage";
 import Actor from "../../src/lib/actor";
 import InputHandler from "../../src/lib/inputHandler";
+// import Engine from "engine";
 
 class Grid extends Actor {
   constructor(bx, by, tx, ty, color) {
@@ -18,6 +19,17 @@ class Grid extends Actor {
     this.ctx.lineTo(this.tx, this.ty);
     this.ctx.strokeStyle = this.color;
     this.ctx.stroke();
+  };
+}
+
+class TileSprite extends Actor {
+  constructor(bounds, imageUrl) {
+    super(bounds);
+    image = imageUrl;
+  }
+
+  render = dt => {
+    this.ctx.drawImage(image, 0, 0);
   };
 }
 
@@ -39,46 +51,6 @@ let inp = new InputHandler(document.querySelector("#main"), {
         console.log(rows[i]);
         let gridX = Math.floor((x - rows[i][0]) / 32) * 32;
         let gridY = Math.floor((y - rows[i][3]) / 32) * 32;
-        // stage.addActor(
-        //   //Draw top horizontal line
-        //   new Grid(
-        //     gridX + rows[i][0],
-        //     rows[i][3],
-        //     gridX + rows[i][0] + 32,
-        //     rows[i][3],
-        //     "red"
-        //   )
-        // );
-        // stage.addActor(
-        //   //draw left vertical line
-        //   new Grid(
-        //     gridX + rows[i][0],
-        //     rows[i][3],
-        //     gridX + rows[i + 1][0],
-        //     rows[i][2],
-        //     "red"
-        //   )
-        // );
-        // stage.addActor(
-        //   //
-        //   new Grid(
-        //     gridX + rows[i][0] + 32,
-        //     rows[i][3],
-        //     gridX + rows[i][0] + 32 - 29.002,
-        //     rows[i][2],
-        //     "red"
-        //   )
-        // );
-        // stage.addActor(
-        //   new Grid(
-        //     gridX + rows[i][0] - 29.002,
-        //     rows[i][2],
-        //     gridX + rows[i][0] - 29.002 + 32,
-        //     rows[i][2],
-        //     "red"
-        //   )
-        // );
-
         let monkey = await loadImage(
           "/" + require("./Code-Monkey.png").default
         );
