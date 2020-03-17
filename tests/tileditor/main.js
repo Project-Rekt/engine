@@ -28,11 +28,14 @@ class Grid extends Actor {
 class TileSprite extends SpriteActor {
     constructor(bounds) {
         super(bounds, SpriteObj)
-        this.ay = 0
-        this.ax = 0
+        this.ay = this.ax = 0
 
         this.vx = 0
         this.vy = 0
+    }
+    render(dt) {
+        super.render(dt)
+        console.log(this.bounds)
     }
 }
 
@@ -58,6 +61,8 @@ let inp = new InputHandler(document.querySelector("#main"), {
                     new TileSprite({
                         x: gridX + rows[i][0] - 20,
                         y: rows[i][3] - 16,
+                        height: 32,
+                        width: 32,
                     })
                 )
                 break
