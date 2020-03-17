@@ -36,6 +36,14 @@
         </div>
         <div class = "item-menu">
             <h3 style="text-align: center;">Menu</h3>
+            <div class="buttons">
+                <a href="#" class ="button" onclick ="select()">Item 1</a>
+                <a href="#" class ="button">Item 2</a>
+                <a href="#" class ="button">Item 3</a>
+                <a href="#" class ="button">Item 4</a>
+                <a href="#" class ="button">Item 5</a>
+                <a href="#" class ="button">Item 6</a>
+            </div>
         </div>
         </div>
     </body>
@@ -48,15 +56,19 @@
         }
         function select(){
 
+            let monkey = await loadImage(
+          "/" + require("./Code-Monkey.png").default
+        );
+
         }
         async function loadImage(src) {
-  let img = new Image();
-  img.src = src;
-  return new Promise((res, rej) => {
-    img.onload = () => {
-      res(img);
-    };
-  });
-}
+            let img = new Image();
+            img.src = src;
+            return new Promise((res, rej) => {
+                img.onload = () => {
+                res(img);
+                };
+            });
+        }
     </script>
 </html>

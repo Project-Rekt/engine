@@ -34,9 +34,6 @@
         <div>
             <canvas id="main" width= 1100.037 height=470.476 style="background-color: white;"></canvas>
         </div>
-        <div class = "item-menu">
-            <h3 style="text-align: center;">Menu</h3>
-        </div>
         </div>
     </body>
     <script>
@@ -44,19 +41,10 @@
             var drawing = document.getElementById('main')
             var con = drawing.getContext("2d")
             var map = document.getElementById("myFile")
-            con.drawImage(map, 0, 0, 0, 0)
-        }
-        function select(){
+            for(var i=0;i<=1100;i+=32){
+                
 
+            }
         }
-        async function loadImage(src) {
-  let img = new Image();
-  img.src = src;
-  return new Promise((res, rej) => {
-    img.onload = () => {
-      res(img);
-    };
-  });
-}
     </script>
 </html>
