@@ -2,7 +2,7 @@ export default {
     properties: {},
     states: {
         idle: {
-            location: '/' + require('./assets/goku_idle.png').default, //location of sprites
+            location: '/' + require('./assets/goku_idle.png'), //location of sprites
             rps: 5, //refresh per second
             loop: true, //will continue to loop
             frames: [{
@@ -23,7 +23,7 @@ export default {
             }]
         },
         fight: {
-            location: '/' + require('./assets/goku_fight.png').default, //location of sprites
+            location: '/' + require('./assets/goku_fight.png'), //location of sprites
             rps: 10, //refresh per second
             frames: [{
                 x: 0, 
