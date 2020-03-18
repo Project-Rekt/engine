@@ -1,4 +1,5 @@
 export default {
+    name: {},
     properties: {},
     states: {
         idle: {
@@ -32,5 +33,35 @@ export default {
                 },
             ],
         },
+        // fight: {
+        //     location: "/" + require("./assets/goku_fight.png").default, //location of sprites
+        //     rps: 10, //refresh per second
+        //     frames: [
+        //         {
+        //             x: 0,
+        //             y: 9,
+        //             width: 59,
+        //             height: 78,
+        //         },
+        //         {
+        //             x: 69,
+        //             y: 10,
+        //             width: 87,
+        //             height: 77,
+        //         },
+        //         {
+        //             x: 164,
+        //             y: 0,
+        //             width: 51,
+        //             height: 88,
+        //         },
+        //         {
+        //             x: 226,
+        //             y: 1,
+        //             width: 80,
+        //             height: 89,
+        //         },
+        //     ],
+        // },
     },
 }

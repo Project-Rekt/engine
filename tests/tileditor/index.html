@@ -24,6 +24,10 @@
                 display: inline-block;
                 font-size: 16px;
             }
+            div.gallery:hover{
+                border:1px solid #777;
+
+            }
 
         </style>
     </head>
@@ -36,10 +40,23 @@
         </div>
         <div class = "item-menu">
             <h3 style="text-align: center;">Menu</h3>
+            <div class = "gallery">
+                <button id = "weebSprite" class ="btn"><img src = "../tileditor/assets/exchange_walking.gif" alt="name of image" width="300" height="200"></button>
+            </div>
+            <div class = "gallery">
+                <button id = "grillSprite" class ="btn"><img src = "../tileditor/assets/exchange_walking.gif" alt="name of image" width="300" height="200"></button>
+            </div>
+            <div class = "gallery">
+                <button id = "ryeSprite" class ="btn"><img src = "../tileditor/assets/exchange_walking.gif" alt="name of image" width="300" height="200"></button>
+            </div>
+            <div class = "gallery">
+                <button id = "exchangeSprite" class ="btn"><img src = "../tileditor/assets/exchange_walking.gif" alt="name of image" width="300" height="200"></button>
+            </div>
         </div>
         </div>
     </body>
     <script>
+
         function draw(){
             var drawing = document.getElementById('main')
             var con = drawing.getContext("2d")
@@ -50,11 +67,11 @@
 
         }
         async function loadImage(src) {
-  let img = new Image();
-  img.src = src;
-  return new Promise((res, rej) => {
-    img.onload = () => {
-      res(img);
+            let img = new Image();
+            img.src = src;
+            return new Promise((res, rej) => {
+                img.onload = () => {
+                res(img);
     };
   });
 }

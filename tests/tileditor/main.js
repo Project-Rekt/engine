@@ -4,6 +4,11 @@ import InputHandler from "../../src/lib/inputHandler"
 
 import SpriteActor from "../../src/lib/spriteActor"
 import SpriteObj from "../tileditor/tileSprite"
+import weeb from "../tileditor/weebSprite"
+import grill from "../tileditor/grillSprite"
+import rye from "../tileditor/ryeSprite"
+import exchange from "../tileditor/exchangeSprite"
+import tileSprite from "../tileditor/tileSprite"
 // import Engine from "engine";
 
 class Grid extends Actor {
@@ -38,7 +43,7 @@ class TileSprite extends SpriteActor {
         console.log(this.bounds)
     }
 }
-
+let toggle = tileSprite
 let stage = new Stage(document.querySelector("#main"))
 let inp = new InputHandler(document.querySelector("#main"), {
     mousedown: async function() {
@@ -57,29 +62,50 @@ let inp = new InputHandler(document.querySelector("#main"), {
                 console.log(rows[i])
                 let gridX = Math.floor((x - rows[i][0]) / 32) * 32
                 let gridY = Math.floor((y - rows[i][3]) / 32) * 32
-                stage.addActor(
-                    new TileSprite({
+
+                // sprite.bounds = {
+                //     x: gridX + rows[i][0] - 20,
+                //     y: rows[i][3] - 16,
+                //     height: 32,
+                //     width: 32,
+                // }
+                let sprite = new SpriteActor(
+                    {
                         x: gridX + rows[i][0] - 20,
                         y: rows[i][3] - 16,
                         height: 32,
                         width: 32,
-                    })
+                    },
+                    toggle
                 )
+                stage.addActor(sprite)
                 break
             }
         }
     },
 })
+document.querySelector("#weebSprite").addEventListener("click", function() {
+    toggle = weeb
+})
+document.querySelector("#grillSprite").addEventListener("click", function() {
+    toggle = grill
+})
+document.querySelector("#exchangeSprite").addEventListener("click", function() {
+    toggle = exchange
+})
+document.querySelector("#ryeSprite").addEventListener("click", function() {
+    toggle = rye
+})
 
-// async function loadImage(src) {
-//     let img = new Image()
-//     img.src = src
-//     return new Promise((res, rej) => {
-//         img.onload = () => {
-//             res(img)
-//         }
-//     })
-// }
+async function loadImage(src) {
+    let img = new Image()
+    img.src = src
+    return new Promise((res, rej) => {
+        img.onload = () => {
+            res(img)
+        }
+    })
+}
 
 for (let i = 0; i <= 15; i++) {
     //drawing vertical lines
