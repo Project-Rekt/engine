@@ -4,7 +4,8 @@ export default {
     states: {
         idle: {
             location:
-                "/" + require("../tileditor/assets/rye_walking.png").default, //location of sprites
+                "/" +
+                require("../../tileditor/assets/exchange_walking1.png").default, //location of sprites
             rps: 5, //refresh per second
             loop: true, //will continue to loop
             frames: [
@@ -28,7 +29,7 @@ export default {
                 },
                 {
                     x: 32,
-                    y: 32,
+                    y: 30,
                     width: 32,
                     height: 32,
                 },

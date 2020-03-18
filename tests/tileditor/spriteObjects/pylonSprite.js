@@ -3,32 +3,31 @@ export default {
     properties: {},
     states: {
         idle: {
-            location:
-                "/" + require("../tileditor/assets/weeb_walking.png").default, //location of sprites
+            location: "/" + require("../../tileditor/assets/Pylon.png").default, //location of sprites
             rps: 5, //refresh per second
             loop: true, //will continue to loop
             frames: [
                 {
-                    x: 3,
-                    y: 3,
-                    width: 32,
-                    height: 32,
-                },
-                {
-                    x: 32,
-                    y: 1,
+                    x: 0,
+                    y: 0,
                     width: 32,
                     height: 32,
                 },
                 {
                     x: 0,
-                    y: 32,
+                    y: 0,
                     width: 32,
                     height: 32,
                 },
                 {
-                    x: 32,
-                    y: 30,
+                    x: 0,
+                    y: 0,
+                    width: 32,
+                    height: 32,
+                },
+                {
+                    x: 0,
+                    y: 0,
                     width: 32,
                     height: 32,
                 },

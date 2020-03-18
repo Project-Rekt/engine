@@ -3,12 +3,24 @@ import Actor from "../../src/lib/actor"
 import InputHandler from "../../src/lib/inputHandler"
 
 import SpriteActor from "../../src/lib/spriteActor"
-import SpriteObj from "../tileditor/tileSprite"
-import weeb from "../tileditor/weebSprite"
+import SpriteObj from "./spriteObjects/monkeySprite"
+import weeb from "./spriteObjects/weebSprite"
 import grill from "../tileditor/grillSprite"
-import rye from "../tileditor/ryeSprite"
-import exchange from "../tileditor/exchangeSprite"
-import tileSprite from "../tileditor/tileSprite"
+import rye from "./spriteObjects/ryeSprite"
+import exchange from "./spriteObjects/exchangeSprite"
+import tileSprite from "./spriteObjects/monkeySprite"
+import pylon from "../tileditor/spriteObjects/pylonSprite"
+import car from "../tileditor/spriteObjects/carSprite"
+import protester from "../tileditor/spriteObjects/protesterSprite"
+import umbrella from "../tileditor/spriteObjects/umbrellaSprite"
+import fence from "../tileditor/spriteObjects/fenceSprite"
+import monkey from "../tileditor/spriteObjects/monkeySprite"
+import mason from "../tileditor/spriteObjects/masonSprite"
+import ali from "./spriteObjects/aliSprite"
+import harley from "../tileditor/spriteObjects/harleySprite"
+import lan from "../tileditor/spriteObjects/lanSprite"
+import ta from "../tileditor/spriteObjects/taSprite"
+
 // import Engine from "engine";
 
 class Grid extends Actor {
@@ -87,6 +99,9 @@ let inp = new InputHandler(document.querySelector("#main"), {
 document.querySelector("#weebSprite").addEventListener("click", function() {
     toggle = weeb
 })
+document.querySelector("#monkeySprite").addEventListener("click", function() {
+    toggle = monkey
+})
 document.querySelector("#grillSprite").addEventListener("click", function() {
     toggle = grill
 })
@@ -96,7 +111,37 @@ document.querySelector("#exchangeSprite").addEventListener("click", function() {
 document.querySelector("#ryeSprite").addEventListener("click", function() {
     toggle = rye
 })
+document.querySelector("#pylon").addEventListener("click", function() {
+    toggle = pylon
+})
+document.querySelector("#umbrella").addEventListener("click", function() {
+    toggle = umbrella
+})
+document.querySelector("#protester").addEventListener("click", function() {
+    toggle = protester
+})
+document.querySelector("#car").addEventListener("click", function() {
+    toggle = car
+})
+document.querySelector("#fence").addEventListener("click", function() {
+    toggle = fence
+})
 
+document.querySelector("#mason").addEventListener("click", function() {
+    toggle = mason
+})
+document.querySelector("#lan").addEventListener("click", function() {
+    toggle = lan
+})
+document.querySelector("#ta").addEventListener("click", function() {
+    toggle = ta
+})
+document.querySelector("#ali").addEventListener("click", function() {
+    toggle = ali
+})
+document.querySelector("#harley").addEventListener("click", function() {
+    toggle = harley
+})
 async function loadImage(src) {
     let img = new Image()
     img.src = src

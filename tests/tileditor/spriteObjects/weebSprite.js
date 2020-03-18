@@ -5,7 +5,7 @@ export default {
         idle: {
             location:
                 "/" +
-                require("../tileditor/assets/exchange_walking.png").default, //location of sprites
+                require("../../tileditor/assets/weeb_walking.png").default, //location of sprites
             rps: 5, //refresh per second
             loop: true, //will continue to loop
             frames: [

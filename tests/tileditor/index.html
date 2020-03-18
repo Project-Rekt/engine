@@ -2,60 +2,164 @@
 <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Tile Editor</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Short+Stack&display=swap" rel="stylesheet"> 
+        <title >Tile Editor</title>
         <style>
             .flex-container{
                 display: flex;
                 flex-direction: row;
             }
+            .icon-bar {
+                width: 90px;
+                background-color: #555;
+                height: 420px;
+                
+                }
             .item-menu{
                 align-content: center;
                 margin:30px;
 
             }
-            .button{
-                background-color:#f44336;; /* Green */
-                border: none;
-                color: white;
-                padding: 32px 32px 32px 32px;
-                margin: 20px;
+            .icon-bar a {
+                display: block;
                 text-align: center;
-                text-decoration: none;
+                padding: 16px;
+                transition: all 0.3s ease;
+                color: white;
+                font-size: 36px;
+                }
+            .icon-bar a:hover {
+                background-color: #000;
+            }
+            .active {
+                background-color: #4CAF50;
+            }
+            .button-image icon:before {
+                content: "";
+                width: 16px;
+                height: 16px;
                 display: inline-block;
-                font-size: 16px;
+                margin-right: 5px;
+                vertical-align: text-top;
+                background-color: transparent;
+                background-position : center center;
+                background-repeat:no-repeat;
+            }
+            .weeb:before{
+                background-image :url("tests/tileditor/assets/weeb.png")
             }
             div.gallery:hover{
-                border:1px solid #777;
+                border:1px solid black;
 
             }
+            .icon{
+                width: 100px;
+                height: 50px;
+                border: 1px solid black;
+            }
+            .student{
+                display:none;
+            }
+            .obstacle{
+                display:none;
+            }
+            .tower{
+                display:none;
+            }
+            
 
         </style>
     </head>
     <body>
-        <div><h1 style="text-align: center;">Tile Editor</h1></div>
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+              <h1 class="display-4" style = "font-family: 'Short Stack', cursive;">Project Rekt - Tile Editor</h1>
+              <p class="lead">Playground for imagining new ways the Ryerson Administration can make it difficult to graduate</p>
+            </div>
+          </div>
         <!-- <input type="file" id="myFile"> -->
         <div class="flex-container">
-        <div>
-            <canvas id="main" width= 1100.037 height=470.476 style="background-color: white;"></canvas>
+            <div>
+                <canvas id="main" width= 1100.037 height=470.476 style="background-color: white;"></canvas>
+            </div>
+            <!-- <div class = "item-menu">
+                <h3 style="text-align: center;">Menu</h3>
+                <div class = "gallery">
+                    <button id = "weebSprite" class ="btn btn-primary button-image icon weeb"><img src = "/tests/tileditor/assets/weeb.png" alt="weeb" width="300" height="200"></button>
+                </div>
+                <div class = "gallery">
+                    <button id = "grillSprite" class ="btn"><img src = "../tileditor/assets/exchange_walking.gif" alt="grill" width="300" height="200"></button>
+                </div>
+                <div class = "gallery">
+                    <button id = "ryeSprite" class ="btn"><img src = "../tileditor/assets/exchange_walking.gif" alt="rye" width="300" height="200"></button>
+                </div>
+                <div class = "gallery">
+                    <button id = "exchangeSprite" class ="btn"><img src = "../tileditor/assets/exchange_walking.gif" alt="exchange" width="300" height="200"></button>
+                </div>
+                
+            </div> -->
+            <div class="icon-bar">
+                <a>
+                    <img src="assets/icons/students.png" alt="students"></img>
+                    <button onclick = "showStudents()" id = "studentIcon" class = "btn btn-primary" width="300" height="100"></button>
+                </a> 
+                <a>
+                    <img src="assets/icons/obstacle.png" alt="obstacles"></img>
+                    <button onclick = "showObstacles()" id = "studentIcon" class = "btn btn-primary" width="300" height="100"></button>
+                </a> 
+                <a>
+                    <img src="assets/icons/tower.png" alt="towers"></img>
+                    <button onclick = "showTowers()" id = "studentIcon" class = "btn btn-primary" width="300" height="100"></button>
+                </a> 
+            </div>
+            <div class = "icon-bar-options">
+                <button id = "weebSprite" class ="btn btn-primary button-image icon  student"><img src = "/tests/tileditor/assets/weeb.png" alt="weeb"></button>
+                <button id = "grillSprite" class ="btn btn-primary button-image icon  student"><img src = "../tileditor/assets/exchange_walking.gif" alt="grill"></button>
+                <button id = "exchangeSprite" class ="btn btn-primary button-image icon  student"><img src = "../tileditor/assets/exchange_walking.gif" alt="exchange" ></button>
+                <button id = "ryeSprite" class ="btn btn-primary button-image icon  student"><img src = "../tileditor/assets/exchange_walking.gif" alt="rye" ></button>
+                <button id = "monkeySprite" class ="btn btn-primary button-image icon  student"><img src = "../tileditor/assets/exchange_walking.gif" alt="monkey" ></button>
+
+                <button id = "pylon" class ="btn btn-danger button-image icon  obstacle"><img src = "../tileditor/assets/exchange_walking.gif" alt="pylon" ></button>
+                <button id = "car" class ="btn btn-danger button-image icon  obstacle"><img src = "../tileditor/assets/exchange_walking.gif" alt="car" ></button>
+                <button id = "protester" class ="btn btn-danger button-image icon  obstacle"><img src = "../tileditor/assets/exchange_walking.gif" alt="protester" ></button>
+                <button id = "umbrella" class ="btn btn-danger button-image icon  obstacle"><img src = "../tileditor/assets/exchange_walking.gif" alt="umbrella" ></button>
+                <button id = "fence" class ="btn btn-danger button-image icon  obstacle"><img src = "../tileditor/assets/exchange_walking.gif" alt="fence" ></button>
+
+                <button id = "mason" class ="btn btn-success button-image icon  tower"><img src = "../tileditor/assets/exchange_walking.gif" alt="mason" ></button>
+                <button id = "lan" class ="btn btn-success button-image icon  tower"><img src = "../tileditor/assets/exchange_walking.gif" alt="lan" ></button>
+                <button id = "ta" class ="btn btn-success button-image icon  tower"><img src = "../tileditor/assets/exchange_walking.gif" alt="ta" ></button>
+                <button id = "ali" class ="btn btn-success button-image icon  tower"><img src = "../tileditor/assets/exchange_walking.gif" alt="ali" ></button>
+                <button id = "harley" class ="btn btn-success button-image icon  tower"><img src = "../tileditor/assets/exchange_walking.gif" alt="harley" ></button>
+                
+            </div>
         </div>
-        <div class = "item-menu">
-            <h3 style="text-align: center;">Menu</h3>
-            <div class = "gallery">
-                <button id = "weebSprite" class ="btn"><img src = "../tileditor/assets/exchange_walking.gif" alt="name of image" width="300" height="200"></button>
-            </div>
-            <div class = "gallery">
-                <button id = "grillSprite" class ="btn"><img src = "../tileditor/assets/exchange_walking.gif" alt="name of image" width="300" height="200"></button>
-            </div>
-            <div class = "gallery">
-                <button id = "ryeSprite" class ="btn"><img src = "../tileditor/assets/exchange_walking.gif" alt="name of image" width="300" height="200"></button>
-            </div>
-            <div class = "gallery">
-                <button id = "exchangeSprite" class ="btn"><img src = "../tileditor/assets/exchange_walking.gif" alt="name of image" width="300" height="200"></button>
-            </div>
-        </div>
-        </div>
+        
+        
     </body>
     <script>
+
+        function showStudents(){
+            var elements = document.getElementsByClassName("student");
+            for (var i = 0; i < elements.length; i++) {
+                elements[i].style.display = elements[i].style.display == 'inline' ? 'none' : 'inline';
+            }
+            
+        }
+        function showObstacles(){
+            var elements = document.getElementsByClassName("obstacle");
+            for (var i = 0; i < elements.length; i++) {
+                elements[i].style.display = elements[i].style.display == 'inline' ? 'none' : 'inline';
+            }
+            
+        }
+        function showTowers(){
+            var elements = document.getElementsByClassName("tower");
+            for (var i = 0; i < elements.length; i++) {
+                elements[i].style.display = elements[i].style.display == 'inline' ? 'none' : 'inline';
+            }
+            
+        }
 
         function draw(){
             var drawing = document.getElementById('main')
