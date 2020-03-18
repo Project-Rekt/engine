@@ -4,7 +4,7 @@ export default {
     states: {
         idle: {
             location:
-                "/" + require("../tileditor/assets/grill_walking.png").default, //location of sprites
+                "/" + require("../assets/grill_walking.png"), //location of sprites
             rps: 5, //refresh per second
             loop: true, //will continue to loop
             frames: [

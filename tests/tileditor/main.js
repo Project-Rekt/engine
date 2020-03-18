@@ -5,21 +5,21 @@ import InputHandler from "../../src/lib/inputHandler"
 import SpriteActor from "../../src/lib/spriteActor"
 import SpriteObj from "./spriteObjects/monkeySprite"
 import weeb from "./spriteObjects/weebSprite"
-import grill from "../tileditor/grillSprite"
+import grill from "./spriteObjects/grillSprite"
 import rye from "./spriteObjects/ryeSprite"
 import exchange from "./spriteObjects/exchangeSprite"
 import tileSprite from "./spriteObjects/monkeySprite"
-import pylon from "../tileditor/spriteObjects/pylonSprite"
-import car from "../tileditor/spriteObjects/carSprite"
-import protester from "../tileditor/spriteObjects/protesterSprite"
-import umbrella from "../tileditor/spriteObjects/umbrellaSprite"
-import fence from "../tileditor/spriteObjects/fenceSprite"
-import monkey from "../tileditor/spriteObjects/monkeySprite"
-import mason from "../tileditor/spriteObjects/masonSprite"
+import pylon from "./spriteObjects/pylonSprite"
+import car from "./spriteObjects/carSprite"
+import protester from "./spriteObjects/protesterSprite"
+import umbrella from "./spriteObjects/umbrellaSprite"
+import fence from "./spriteObjects/fenceSprite"
+import monkey from "./spriteObjects/monkeySprite"
+import mason from "./spriteObjects/masonSprite"
 import ali from "./spriteObjects/aliSprite"
-import harley from "../tileditor/spriteObjects/harleySprite"
-import lan from "../tileditor/spriteObjects/lanSprite"
-import ta from "../tileditor/spriteObjects/taSprite"
+import harley from "./spriteObjects/harleySprite"
+import lan from "./spriteObjects/lanSprite"
+import ta from "./spriteObjects/taSprite"
 
 // import Engine from "engine";
 
@@ -56,8 +56,9 @@ class TileSprite extends SpriteActor {
     }
 }
 let toggle = tileSprite
-let stage = new Stage(document.querySelector("#main"))
-let inp = new InputHandler(document.querySelector("#main"), {
+let fStage = new Stage(document.querySelector("#fore"))
+let bStage = new Stage(document.querySelector("#back"))
+let inp = new InputHandler(document.querySelector("#fore"), {
     mousedown: async function() {
         console.log(rows)
         let x = this.input.x - 12
@@ -90,7 +91,7 @@ let inp = new InputHandler(document.querySelector("#main"), {
                     },
                     toggle
                 )
-                stage.addActor(sprite)
+                fStage.addActor(sprite)
                 break
             }
         }
@@ -154,7 +155,7 @@ async function loadImage(src) {
 
 for (let i = 0; i <= 15; i++) {
     //drawing vertical lines
-    stage.addActor(
+    bStage.addActor(
         new Grid(600.032 + 32 * i, 100, 20 + 32 * i, 370.476, "black")
     )
 }
@@ -172,7 +173,7 @@ for (var i = 1; i < rows.length; i++) {
     rows[i][3] = rows[i - 1][3] + 13.524
 }
 for (let i = 0; i <= 20; i++) {
-    stage.addActor(
+    bStage.addActor(
         new Grid(
             20 + 29.002 * i,
             370.476 - 13.524 * i,
@@ -184,5 +185,6 @@ for (let i = 0; i <= 20; i++) {
     //console.log(20 + 29.002*i, 370.476 -13.524*i)
 }
 
-stage.start()
+fStage.start();
+bStage.start();
 inp.startHandler()

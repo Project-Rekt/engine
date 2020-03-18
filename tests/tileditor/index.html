@@ -68,7 +68,15 @@
                 display:none;
             }
             
+            canvas {
+                position: absolute;
+            }
 
+            .flex-container {
+                position: absolute;
+                z-index: 1000;
+                right: 0;
+            }
         </style>
     </head>
     <body>
@@ -78,11 +86,12 @@
               <p class="lead">Playground for imagining new ways the Ryerson Administration can make it difficult to graduate</p>
             </div>
           </div>
+          <div>
+            <canvas id="back" width= 1100.037 height=470.476 style="background-color: white;"></canvas>
+            <canvas id="fore" width= 1100.037 height=470.476 style="background-color: rgba(0,0,0,0);"></canvas>
+        </div>
         <!-- <input type="file" id="myFile"> -->
         <div class="flex-container">
-            <div>
-                <canvas id="main" width= 1100.037 height=470.476 style="background-color: white;"></canvas>
-            </div>
             <!-- <div class = "item-menu">
                 <h3 style="text-align: center;">Menu</h3>
                 <div class = "gallery">
