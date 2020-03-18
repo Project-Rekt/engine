@@ -3,8 +3,7 @@ export default {
     properties: {},
     states: {
         idle: {
-            location:
-                "/" + require("../../tileditor/assets/protester.png").default, //location of sprites
+            location: "/" + require("../../tileditor/assets/protester.png"), //location of sprites
             rps: 5, //refresh per second
             loop: true, //will continue to loop
             frames: [

@@ -65,13 +65,12 @@ export default class SpriteActor extends Actor {
     }
 
     render = deltaTime => {
-        // this.ctx.fillStyle = "black"
-        // this.ctx.fillRect(
-        //     this.px,
-        //     this.py,
-        //     this.bounds.width * this.scale,
-        //     this.bounds.height * this.scale
-        // )
+        this.ctx.clearRect(
+            this.px,
+            this.py,
+            this.bounds.width * this.scale,
+            this.bounds.height * this.scale
+        )
 
         let sstate = this.states[this.currentState]
 

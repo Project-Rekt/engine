@@ -13,7 +13,7 @@
             .icon-bar {
                 width: 90px;
                 background-color: #555;
-                height: 420px;
+                height: 450px;
                 
                 }
             .item-menu{
@@ -30,7 +30,7 @@
                 font-size: 36px;
                 }
             .icon-bar a:hover {
-                background-color: #000;
+                background-color: rgb(177, 116, 3);
             }
             .active {
                 background-color: #4CAF50;
@@ -50,7 +50,7 @@
                 background-image :url("tests/tileditor/assets/weeb.png")
             }
             div.gallery:hover{
-                border:1px solid black;
+                border:1px solid #777;
 
             }
             .icon{
@@ -101,36 +101,36 @@
             </div> -->
             <div class="icon-bar">
                 <a>
-                    <img src="assets/icons/students.png" alt="students"></img>
+                    <img src=<%="/"+require("./assets/icons/students.png")%> alt="students"></img>
                     <button onclick = "showStudents()" id = "studentIcon" class = "btn btn-primary" width="300" height="100"></button>
                 </a> 
                 <a>
-                    <img src="assets/icons/obstacle.png" alt="obstacles"></img>
+                    <img src=<%="/"+require("./assets/icons/obstacle.png")%> alt="obstacles"></img>
                     <button onclick = "showObstacles()" id = "studentIcon" class = "btn btn-primary" width="300" height="100"></button>
                 </a> 
                 <a>
-                    <img src="assets/icons/tower.png" alt="towers"></img>
+                    <img src=<%="/"+require("./assets/icons/tower.png")%> alt="towers"></img>
                     <button onclick = "showTowers()" id = "studentIcon" class = "btn btn-primary" width="300" height="100"></button>
                 </a> 
             </div>
             <div class = "icon-bar-options">
-                <button id = "weebSprite" class ="btn btn-primary button-image icon  student"><img src = "/tests/tileditor/assets/weeb.png" alt="weeb"></button>
-                <button id = "grillSprite" class ="btn btn-primary button-image icon  student"><img src = "../tileditor/assets/exchange_walking.gif" alt="grill"></button>
-                <button id = "exchangeSprite" class ="btn btn-primary button-image icon  student"><img src = "../tileditor/assets/exchange_walking.gif" alt="exchange" ></button>
-                <button id = "ryeSprite" class ="btn btn-primary button-image icon  student"><img src = "../tileditor/assets/exchange_walking.gif" alt="rye" ></button>
-                <button id = "monkeySprite" class ="btn btn-primary button-image icon  student"><img src = "../tileditor/assets/exchange_walking.gif" alt="monkey" ></button>
+                <button id = "weebSprite" class ="btn btn-primary button-image icon  student">weeb</button>
+                <button id = "grillSprite" class ="btn btn-primary button-image icon  student">gril</button>
+                <button id = "exchangeSprite" class ="btn btn-primary button-image icon  student">fob</button>
+                <button id = "ryeSprite" class ="btn btn-primary button-image icon  student">normie</button>
+                <button id = "monkeySprite" class ="btn btn-primary button-image icon  student">monkey</button>
 
-                <button id = "pylon" class ="btn btn-danger button-image icon  obstacle"><img src = "../tileditor/assets/exchange_walking.gif" alt="pylon" ></button>
-                <button id = "car" class ="btn btn-danger button-image icon  obstacle"><img src = "../tileditor/assets/exchange_walking.gif" alt="car" ></button>
-                <button id = "protester" class ="btn btn-danger button-image icon  obstacle"><img src = "../tileditor/assets/exchange_walking.gif" alt="protester" ></button>
-                <button id = "umbrella" class ="btn btn-danger button-image icon  obstacle"><img src = "../tileditor/assets/exchange_walking.gif" alt="umbrella" ></button>
-                <button id = "fence" class ="btn btn-danger button-image icon  obstacle"><img src = "../tileditor/assets/exchange_walking.gif" alt="fence" ></button>
+                <button id = "pylon" class ="btn btn-danger button-image icon  obstacle">pylon</button>
+                <button id = "car" class ="btn btn-danger button-image icon  obstacle">car</button>
+                <button id = "protester" class ="btn btn-danger button-image icon  obstacle">protester</button>
+                <button id = "umbrella" class ="btn btn-danger button-image icon  obstacle">umbrella</button>
+                <button id = "fence" class ="btn btn-danger button-image icon  obstacle">fence</button>
 
-                <button id = "mason" class ="btn btn-success button-image icon  tower"><img src = "../tileditor/assets/exchange_walking.gif" alt="mason" ></button>
-                <button id = "lan" class ="btn btn-success button-image icon  tower"><img src = "../tileditor/assets/exchange_walking.gif" alt="lan" ></button>
-                <button id = "ta" class ="btn btn-success button-image icon  tower"><img src = "../tileditor/assets/exchange_walking.gif" alt="ta" ></button>
-                <button id = "ali" class ="btn btn-success button-image icon  tower"><img src = "../tileditor/assets/exchange_walking.gif" alt="ali" ></button>
-                <button id = "harley" class ="btn btn-success button-image icon  tower"><img src = "../tileditor/assets/exchange_walking.gif" alt="harley" ></button>
+                <button id = "mason" class ="btn btn-success button-image icon  tower">mason</button>
+                <button id = "lan" class ="btn btn-success button-image icon  tower">lan</button>
+                <button id = "ta" class ="btn btn-success button-image icon  tower">TA</button>
+                <button id = "ali" class ="btn btn-success button-image icon  tower">ali</button>
+                <button id = "harley" class ="btn btn-success button-image icon  tower">harley</button>
                 
             </div>
         </div>
