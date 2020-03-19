@@ -1,10 +1,9 @@
 export default {
-    name: {},
+    name: "grill-student",
     properties: {},
     states: {
         idle: {
-            location:
-                "/" + require("../assets/grill_walking.png"), //location of sprites
+            location: "/" + require("../assets/grill_walking.png"), //location of sprites
             rps: 5, //refresh per second
             loop: true, //will continue to loop
             frames: [

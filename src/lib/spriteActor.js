@@ -12,7 +12,8 @@ async function loadImage(src) {
 
 export default class SpriteActor extends Actor {
     constructor(bounds, spriteObj) {
-        super(bounds)
+        super(bounds, spriteObj["name"])
+
         this.properties = spriteObj.properties || {}
         this.states = spriteObj.states || {
             idle: {

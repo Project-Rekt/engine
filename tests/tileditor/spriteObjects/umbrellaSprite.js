@@ -1,5 +1,5 @@
 export default {
-    name: {},
+    name: "umbrella-obstacle",
     properties: {},
     states: {
         idle: {

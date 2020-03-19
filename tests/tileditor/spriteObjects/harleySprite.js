@@ -1,5 +1,5 @@
 export default {
-    name: {},
+    name: "harley-turret",
     properties: {},
     states: {
         idle: {

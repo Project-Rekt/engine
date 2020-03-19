@@ -1,5 +1,5 @@
 export default {
-    name: {},
+    name: "car-obstacle",
     properties: {},
     states: {
         idle: {

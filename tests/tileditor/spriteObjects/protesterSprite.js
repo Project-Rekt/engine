@@ -1,5 +1,5 @@
 export default {
-    name: {},
+    name: "protester-obstacle",
     properties: {},
     states: {
         idle: {

@@ -1,5 +1,5 @@
 export default {
-    name: {},
+    name: "weeb-student",
     properties: {},
     states: {
         idle: {

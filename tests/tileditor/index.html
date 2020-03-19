@@ -10,41 +10,33 @@
                 display: flex;
                 flex-direction: row;
             }
-            .icon-bar {
-                width: 90px;
-                background-color: #555;
-                height: 450px;
-                
-                }
+            
             .item-menu{
                 align-content: center;
                 margin:30px;
 
             }
+            .icon-bar {
+                width:75%;
+                background-color: #555;
+                overflow: auto;
+            }
+
             .icon-bar a {
-                display: block;
+                float: left;
+                width: 25%;
                 text-align: center;
-                padding: 16px;
+                padding: 12px 0;
                 transition: all 0.3s ease;
                 color: white;
                 font-size: 36px;
-                }
+                height: 100%;
+            }
             .icon-bar a:hover {
                 background-color: rgb(177, 116, 3);
             }
             .active {
                 background-color: #4CAF50;
-            }
-            .button-image icon:before {
-                content: "";
-                width: 16px;
-                height: 16px;
-                display: inline-block;
-                margin-right: 5px;
-                vertical-align: text-top;
-                background-color: transparent;
-                background-position : center center;
-                background-repeat:no-repeat;
             }
             .weeb:before{
                 background-image :url("tests/tileditor/assets/weeb.png")
@@ -52,6 +44,9 @@
             div.gallery:hover{
                 border:1px solid #777;
 
+            }
+            .icon-bar-options{
+                width: 500px;
             }
             .icon{
                 width: 100px;
@@ -73,6 +68,7 @@
             }
 
             .flex-container {
+                flex-direction: column;
                 position: absolute;
                 z-index: 1000;
                 right: 0;
@@ -92,22 +88,6 @@
         </div>
         <!-- <input type="file" id="myFile"> -->
         <div class="flex-container">
-            <!-- <div class = "item-menu">
-                <h3 style="text-align: center;">Menu</h3>
-                <div class = "gallery">
-                    <button id = "weebSprite" class ="btn btn-primary button-image icon weeb"><img src = "/tests/tileditor/assets/weeb.png" alt="weeb" width="300" height="200"></button>
-                </div>
-                <div class = "gallery">
-                    <button id = "grillSprite" class ="btn"><img src = "../tileditor/assets/exchange_walking.gif" alt="grill" width="300" height="200"></button>
-                </div>
-                <div class = "gallery">
-                    <button id = "ryeSprite" class ="btn"><img src = "../tileditor/assets/exchange_walking.gif" alt="rye" width="300" height="200"></button>
-                </div>
-                <div class = "gallery">
-                    <button id = "exchangeSprite" class ="btn"><img src = "../tileditor/assets/exchange_walking.gif" alt="exchange" width="300" height="200"></button>
-                </div>
-                
-            </div> -->
             <div class="icon-bar">
                 <a>
                     <img src=<%="/"+require("./assets/icons/students.png")%> alt="students"></img>
@@ -115,11 +95,14 @@
                 </a> 
                 <a>
                     <img src=<%="/"+require("./assets/icons/obstacle.png")%> alt="obstacles"></img>
-                    <button onclick = "showObstacles()" id = "studentIcon" class = "btn btn-primary" width="300" height="100"></button>
+                    <button onclick = "showObstacles()" id = "obstacleIcon" class = "btn btn-primary" width="300" height="100"></button>
                 </a> 
                 <a>
                     <img src=<%="/"+require("./assets/icons/tower.png")%> alt="towers"></img>
-                    <button onclick = "showTowers()" id = "studentIcon" class = "btn btn-primary" width="300" height="100"></button>
+                    <button onclick = "showTowers()" id = "towerIcon" class = "btn btn-primary" width="300" height="100"></button>
+                </a>
+                <a>
+                    <button  id = "exportJson" class = "btn btn-primary" width="300" height=100%>export</button>
                 </a> 
             </div>
             <div class = "icon-bar-options">
@@ -169,6 +152,7 @@
             }
             
         }
+        
 
         function draw(){
             var drawing = document.getElementById('main')

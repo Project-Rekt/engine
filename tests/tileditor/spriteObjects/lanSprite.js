@@ -1,5 +1,5 @@
 export default {
-    name: {},
+    name: "lan-turret",
     properties: {},
     states: {
         idle: {

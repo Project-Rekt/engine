@@ -1,5 +1,5 @@
 export default {
-    name: {},
+    name: "pylon-obstacle",
     properties: {},
     states: {
         idle: {

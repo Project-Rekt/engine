@@ -1,5 +1,5 @@
 export default {
-    name: {},
+    name: "normie-student",
     properties: {},
     states: {
         idle: {

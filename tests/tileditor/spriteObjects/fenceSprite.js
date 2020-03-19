@@ -1,5 +1,5 @@
 export default {
-    name: {},
+    name: "fence-obstacle",
     properties: {},
     states: {
         idle: {

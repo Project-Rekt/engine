@@ -143,6 +143,25 @@ document.querySelector("#ali").addEventListener("click", function() {
 document.querySelector("#harley").addEventListener("click", function() {
     toggle = harley
 })
+document.querySelector("#exportJson").addEventListener("click", function() {
+    var file = new Blob([JSON.stringify(fStage.exportList)], {
+        type: "application/json",
+    })
+    if (window.navigator.msSaveOrOpenBlob)
+        window.navigator.msSaveOrOpenBlob(file, filename)
+    else {
+        var a = document.createElement("a"),
+            url = URL.createObjectURL(file)
+        a.href = url
+        a.download = "export.JSON"
+        document.body.appendChild(a)
+        a.click()
+        setTimeout(function() {
+            document.body.removeChild(a)
+            window.URL.revokeObjectURL(url)
+        }, 0)
+    }
+})
 async function loadImage(src) {
     let img = new Image()
     img.src = src
@@ -185,6 +204,6 @@ for (let i = 0; i <= 20; i++) {
     //console.log(20 + 29.002*i, 370.476 -13.524*i)
 }
 
-fStage.start();
-bStage.start();
+fStage.start()
+bStage.start()
 inp.startHandler()
