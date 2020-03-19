@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Short+Stack&display=swap" rel="stylesheet"> 
+        <title >Tile Editor</title>
+        <style>
+            .flex-container{
+                display: flex;
+                flex-direction: row;
+            }
+            
+            .item-menu{
+                align-content: center;
+                margin:30px;
+
+            }
+            .icon-bar {
+                width:75%;
+                background-color: #555;
+                overflow: auto;
+            }
+
+            .icon-bar a {
+                float: left;
+                width: 25%;
+                text-align: center;
+                padding: 12px 0;
+                transition: all 0.3s ease;
+                color: white;
+                font-size: 36px;
+                height: 100%;
+            }
+            .icon-bar a:hover {
+                background-color: rgb(177, 116, 3);
+            }
+            .active {
+                background-color: #4CAF50;
+            }
+            .weeb:before{
+                background-image :url("tests/tileditor/assets/weeb.png")
+            }
+            div.gallery:hover{
+                border:1px solid #777;
+
+            }
+            .icon-bar-options{
+                width: 500px;
+            }
+            .icon{
+                width: 100px;
+                height: 50px;
+                border: 1px solid black;
+            }
+            .student{
+                display:none;
+            }
+            .obstacle{
+                display:none;
+            }
+            .tower{
+                display:none;
+            }
+            
+            canvas {
+                position: absolute;
+            }
+
+            .flex-container {
+                flex-direction: column;
+                position: absolute;
+                z-index: 1000;
+                right: 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="jumbotron jumbotron-fluid">
+            <div class="container">
+              <h1 class="display-4" style = "font-family: 'Short Stack', cursive;">Project Rekt - Tile Editor</h1>
+              <p class="lead">Playground for imagining new ways the Ryerson Administration can make it difficult to graduate</p>
+            </div>
+          </div>
+          <div>
+            <canvas id="back" width= 1100.037 height=470.476 style="background-color: white;"></canvas>
+            <canvas id="fore" width= 1100.037 height=470.476 style="background-color: rgba(0,0,0,0);"></canvas>
+        </div>
+        <!-- <input type="file" id="myFile"> -->
+        <div class="flex-container">
+            <div class="icon-bar">
+                <a>
+                    <img src=<%="/"+require("./assets/icons/students.png")%> alt="students"></img>
+                    <button onclick = "showStudents()" id = "studentIcon" class = "btn btn-primary" width="300" height="100"></button>
+                </a> 
+                <a>
+                    <img src=<%="/"+require("./assets/icons/obstacle.png")%> alt="obstacles"></img>
+                    <button onclick = "showObstacles()" id = "obstacleIcon" class = "btn btn-primary" width="300" height="100"></button>
+                </a> 
+                <a>
+                    <img src=<%="/"+require("./assets/icons/tower.png")%> alt="towers"></img>
+                    <button onclick = "showTowers()" id = "towerIcon" class = "btn btn-primary" width="300" height="100"></button>
+                </a>
+                <a>
+                    <button  id = "exportJson" class = "btn btn-primary" width="300" height=100%>export</button>
+                </a> 
+            </div>
+            <div class = "icon-bar-options">
+                <button id = "weebSprite" class ="btn btn-primary button-image icon  student">weeb</button>
+                <button id = "grillSprite" class ="btn btn-primary button-image icon  student">gril</button>
+                <button id = "exchangeSprite" class ="btn btn-primary button-image icon  student">fob</button>
+                <button id = "ryeSprite" class ="btn btn-primary button-image icon  student">normie</button>
+                <button id = "monkeySprite" class ="btn btn-primary button-image icon  student">monkey</button>
+
+                <button id = "pylon" class ="btn btn-danger button-image icon  obstacle">pylon</button>
+                <button id = "car" class ="btn btn-danger button-image icon  obstacle">car</button>
+                <button id = "protester" class ="btn btn-danger button-image icon  obstacle">protester</button>
+                <button id = "umbrella" class ="btn btn-danger button-image icon  obstacle">umbrella</button>
+                <button id = "fence" class ="btn btn-danger button-image icon  obstacle">fence</button>
+
+                <button id = "mason" class ="btn btn-success button-image icon  tower">mason</button>
+                <button id = "lan" class ="btn btn-success button-image icon  tower">lan</button>
+                <button id = "ta" class ="btn btn-success button-image icon  tower">TA</button>
+                <button id = "ali" class ="btn btn-success button-image icon  tower">ali</button>
+                <button id = "harley" class ="btn btn-success button-image icon  tower">harley</button>
+                
+            </div>
+        </div>
+        
+        
+    </body>
+    <script>
+
+        function showStudents(){
+            var elements = document.getElementsByClassName("student");
+            for (var i = 0; i < elements.length; i++) {
+                elements[i].style.display = elements[i].style.display == 'inline' ? 'none' : 'inline';
+            }
+            
+        }
+        function showObstacles(){
+            var elements = document.getElementsByClassName("obstacle");
+            for (var i = 0; i < elements.length; i++) {
+                elements[i].style.display = elements[i].style.display == 'inline' ? 'none' : 'inline';
+            }
+            
+        }
+        function showTowers(){
+            var elements = document.getElementsByClassName("tower");
+            for (var i = 0; i < elements.length; i++) {
+                elements[i].style.display = elements[i].style.display == 'inline' ? 'none' : 'inline';
+            }
+            
+        }
+        
+
+        function draw(){
+            var drawing = document.getElementById('main')
+            var con = drawing.getContext("2d")
+            var map = document.getElementById("myFile")
+            con.drawImage(map, 0, 0, 0, 0)
+        }
+        function select(){
+
+        }
+        async function loadImage(src) {
+            let img = new Image();
+            img.src = src;
+            return new Promise((res, rej) => {
+                img.onload = () => {
+                res(img);
+    };
+  });
+}
+    </script>
+</html>

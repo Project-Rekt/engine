@@ -10,6 +10,9 @@ By default this library provides a super class with basic functionality.
 ### spriteObj = {properties: {}, states: { idle: { location: null, rps: 5, loop: true, frames: [{ x: 0, y: 0, width: 0, height: 0 }] } }
 Create a new actor with the given bounds(dimensions for this actor) and the given spriteObj(metadata for sprite)
 
+<<<<<<< HEAD
+## SpriteActor Functionality
+=======
 ## SpriteObj
 SpriteObj is a pre-defined format for setting properties and sprite maps. 
 
@@ -51,16 +54,41 @@ This function changes the current state of the SpriteActor. The rendered sprite 
 ### loadSpriteObj(spriteObj)
 This function lets you change the spriteObj of the spriteActor.
 
+>>>>>>> origin/develop
 ### create()
 This function is called once, when the actor is added to the stage.
 
 ### render(deltaTime) 
+<<<<<<< HEAD
+This function gets called every render tick. The time passed from the last render call is passed through deltaTime. Automatically 
+=======
 This function gets called every render tick. The time passed from the last render call is passed through deltaTime. The SpriteActor render method automatically renders the corresponding sprites for the current state at the pre-defined refreshes per seconds.
+>>>>>>> origin/develop
 
 ### update(deltaTime) 
 This function gets called every update tick. The time passed from the last update call is passed through deltaTime.
 
 ### destroy() 
+<<<<<<< HEAD
+<<<<<<< HEAD
+This function is called once, on Actor removal. By default, it clears the Actor's drawbox and removes it from the Stage.
+
+## Example Class
+```
+import Engine from 'engine';
+
+class CoolActor extends Engine.Actor {
+    constructor(bounds) {
+        super(bounds);
+    }
+
+    render = (dt) => {
+        //draw a red box
+        this.ctx.fillStyle="red";
+        this.ctx.fillRect(this.bounds.x, this.bounds.y, this.bounds.width, this.bounds.height)
+=======
+=======
+>>>>>>> aa1851b4889d88b342d926db7ea224c2932cf97f
 This function is called once, on Actor removal. By default, it clears the SpriteActor's last drawn sprite and removes it from the Stage. Additionally it deletes all loaded sprite images.
 
 ## Example Class
@@ -117,6 +145,10 @@ class Goku extends SpriteActor {
 
         this.vx += this.ax;
         this.bounds.x += this.vx;
+<<<<<<< HEAD
+>>>>>>> origin/develop
+=======
+>>>>>>> aa1851b4889d88b342d926db7ea224c2932cf97f
     }
 }
 ```

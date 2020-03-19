@@ -19,7 +19,8 @@ export default class Stage {
         this.ctx = this.elem.getContext("2d")
 
         //setup children
-        this.children = {};
+        this.children = []
+        this.exportList = []
     }
 
     getCollisions = actor => {
@@ -49,17 +50,22 @@ export default class Stage {
     }
 
     addActor = (actor, zIndex) => {
-        if (!zIndex)
-            zIndex = 0;
-        actor.stage = this;
-        actor.ctx = this.ctx;
-        actor.zIndex = zIndex;
-        
+        if (!zIndex) zIndex = 0
+        actor.stage = this
+        actor.ctx = this.ctx
+        actor.zIndex = zIndex
+
         actor.create()
 
         if (!this.children[zIndex]) this.children[zIndex] = []
 
         this.children[zIndex].push(actor)
+        this.exportList.push({
+            name: actor.name,
+            x: actor.bounds["x"],
+            y: actor.bounds["y"],
+        })
+        // console.log("EXPORT LIST - " + JSON.stringify(this.exportList))
     }
 
     removeActor = actor => {
@@ -90,15 +96,15 @@ export default class Stage {
     create = () => {}
 
     start = () => {
-        this.create();
-        window.requestAnimationFrame(this.callUpdateCycles);
-        window.requestAnimationFrame(this.callRenderCycles);
+        this.create()
+        window.requestAnimationFrame(this.callUpdateCycles)
+        window.requestAnimationFrame(this.callRenderCycles)
     }
 
     stop = () => {
-        this.destroy();
-        window.cancelAnimationFrame(this.callUpdateCycles);
-        window.cancelAnimationFrame(this.callRenderCycles);
+        this.destroy()
+        window.cancelAnimationFrame(this.callUpdateCycles)
+        window.cancelAnimationFrame(this.callRenderCycles)
     }
 
     render = () => {}
@@ -109,11 +115,19 @@ export default class Stage {
         let keys = Object.keys(this.children)
         keys.sort((a, b) => a - b)
         //call all children render cycles
-        keys.forEach(function (layer) {
-            this.children[layer].forEach(function (child) {
-                child.render(deltaTime)
-            }, this, deltaTime);
-        }, this, deltaTime);
+        keys.forEach(
+            function(layer) {
+                this.children[layer].forEach(
+                    function(child) {
+                        child.render(deltaTime)
+                    },
+                    this,
+                    deltaTime
+                )
+            },
+            this,
+            deltaTime
+        )
     }
 
     update = () => {}
@@ -124,15 +138,21 @@ export default class Stage {
         let keys = Object.keys(this.children)
         keys.sort((a, b) => a - b)
         //call all children render cycles
-        keys.forEach(function (layer) {
-            this.children[layer].forEach(function (child) {
-                //console.log(deltaTime);
-                child.update(deltaTime);
-            }, this, deltaTime);
-        }, this, deltaTime);
+        keys.forEach(
+            function(layer) {
+                this.children[layer].forEach(
+                    function(child) {
+                        //console.log(deltaTime);
+                        child.update(deltaTime)
+                    },
+                    this,
+                    deltaTime
+                )
+            },
+            this,
+            deltaTime
+        )
     }
 
-    destroy = () => {
-        
-    }
+    destroy = () => {}
 }
