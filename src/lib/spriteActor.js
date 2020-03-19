@@ -95,7 +95,7 @@ export default class SpriteActor extends Actor {
         }
         this.px = Math.round(this.bounds.x)
         this.py = Math.round(this.bounds.y)
-        if (this.frame)
+        if (this.frame && this.current)
             this.ctx.drawImage(
                 this.current,
                 this.frame.x,
