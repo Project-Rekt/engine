@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./tests/inputHandlerTest/inputHandlerTest.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./tests/inputHandlerTest/main.js");
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -142,15 +142,15 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 
 /***/ }),
 
-/***/ "./tests/inputHandlerTest/inputHandlerTest.js":
-/*!****************************************************!*\
-  !*** ./tests/inputHandlerTest/inputHandlerTest.js ***!
-  \****************************************************/
+/***/ "./tests/inputHandlerTest/main.js":
+/*!****************************************!*\
+  !*** ./tests/inputHandlerTest/main.js ***!
+  \****************************************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* WEBPACK VAR INJECTION */(function(global) {/* harmony import */ var _src_lib_inputHandler__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../src/lib/inputHandler */ \"./src/lib/inputHandler.js\");\n\n\nfunction addNotification(text) {\n  var notifications = document.querySelector(\".notifications\");\n\n  if (notifications.childNodes.length > 3) {\n    notifications.innerHTML = \"\";\n  }\n\n  var child = document.createElement(\"div\");\n  child.innerHTML = text;\n  child.classList = \"notification is-info\";\n  Object.assign(child.style, {\n    margin: 0\n  });\n  notifications.appendChild(child);\n  setTimeout(function () {\n    if (child) child.remove();\n  }, 1000);\n} //Input with custom callbacks\n\n\nvar events = {\n  keydown: [function () {\n    addNotification(\"Key Down!\");\n  }],\n  keyup: function keyup() {\n    addNotification(\"Key up!\");\n  },\n  mousedown: [function () {\n    addNotification(\"Mouse button down!\");\n  }],\n  mouseup: function mouseup() {\n    addNotification(\"Mouse button up!\");\n  },\n  mousemove: function mousemove() {\n    addNotification(\"Mouse moving!\");\n  }\n};\nvar exampleInput = new _src_lib_inputHandler__WEBPACK_IMPORTED_MODULE_0__[\"default\"](document.querySelector(\"body\"), events);\n\nglobal.startHandler = function () {\n  exampleInput.startHandler();\n};\n\nglobal.stopHandler = function () {\n  exampleInput.stopHandler();\n};\n/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../node_modules/webpack/buildin/global.js */ \"./node_modules/webpack/buildin/global.js\")))\n\n//# sourceURL=webpack:///./tests/inputHandlerTest/inputHandlerTest.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* WEBPACK VAR INJECTION */(function(global) {/* harmony import */ var _src_lib_inputHandler__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../src/lib/inputHandler */ \"./src/lib/inputHandler.js\");\n\n\nfunction addNotification(text) {\n  var notifications = document.querySelector(\".notifications\");\n\n  if (notifications.childNodes.length > 3) {\n    notifications.innerHTML = \"\";\n  }\n\n  var child = document.createElement(\"div\");\n  child.innerHTML = text;\n  child.classList = \"notification is-info\";\n  Object.assign(child.style, {\n    margin: 0\n  });\n  notifications.appendChild(child);\n  setTimeout(function () {\n    if (child) child.remove();\n  }, 1000);\n} //Input with custom callbacks\n\n\nvar events = {\n  keydown: [function () {\n    addNotification(\"Key Down!\");\n  }],\n  keyup: function keyup() {\n    addNotification(\"Key up!\");\n  },\n  mousedown: [function () {\n    addNotification(\"Mouse button down!\");\n  }],\n  mouseup: function mouseup() {\n    addNotification(\"Mouse button up!\");\n  },\n  mousemove: function mousemove() {\n    addNotification(\"Mouse moving!\");\n  }\n};\nvar exampleInput = new _src_lib_inputHandler__WEBPACK_IMPORTED_MODULE_0__[\"default\"](document.querySelector(\"body\"), events);\n\nglobal.startHandler = function () {\n  exampleInput.startHandler();\n};\n\nglobal.stopHandler = function () {\n  exampleInput.stopHandler();\n};\n/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../node_modules/webpack/buildin/global.js */ \"./node_modules/webpack/buildin/global.js\")))\n\n//# sourceURL=webpack:///./tests/inputHandlerTest/main.js?");
 
 /***/ })
 

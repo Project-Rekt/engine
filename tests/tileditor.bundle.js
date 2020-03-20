@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./tests/spriteActor/main.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./tests/tileditor/main.js");
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -288,49 +288,360 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) *
 
 /***/ }),
 
-/***/ "./tests/spriteActor/assets/goku_fight.png":
-/*!*************************************************!*\
-  !*** ./tests/spriteActor/assets/goku_fight.png ***!
-  \*************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-eval("module.exports = __webpack_require__.p + \"images/goku_fight.png\";\n\n//# sourceURL=webpack:///./tests/spriteActor/assets/goku_fight.png?");
-
-/***/ }),
-
-/***/ "./tests/spriteActor/assets/goku_idle.png":
+/***/ "./tests/tileditor/assets/Code-Monkey.png":
 /*!************************************************!*\
-  !*** ./tests/spriteActor/assets/goku_idle.png ***!
+  !*** ./tests/tileditor/assets/Code-Monkey.png ***!
   \************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-eval("module.exports = __webpack_require__.p + \"images/goku_idle.png\";\n\n//# sourceURL=webpack:///./tests/spriteActor/assets/goku_idle.png?");
+eval("module.exports = __webpack_require__.p + \"images/Code-Monkey.png\";\n\n//# sourceURL=webpack:///./tests/tileditor/assets/Code-Monkey.png?");
 
 /***/ }),
 
-/***/ "./tests/spriteActor/goku.js":
-/*!***********************************!*\
-  !*** ./tests/spriteActor/goku.js ***!
-  \***********************************/
-/*! exports provided: default */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
+/***/ "./tests/tileditor/assets/Fence.png":
+/*!******************************************!*\
+  !*** ./tests/tileditor/assets/Fence.png ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
 
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  properties: {},\n  states: {\n    idle: {\n      location: '/' + __webpack_require__(/*! ./assets/goku_idle.png */ \"./tests/spriteActor/assets/goku_idle.png\"),\n      //location of sprites\n      rps: 5,\n      //refresh per second\n      loop: true,\n      //will continue to loop\n      frames: [{\n        x: 3,\n        y: 3,\n        width: 48,\n        height: 85\n      }, {\n        x: 55,\n        y: 3,\n        width: 46,\n        height: 86\n      }, {\n        x: 103,\n        y: 0,\n        width: 45,\n        height: 91\n      }]\n    },\n    fight: {\n      location: '/' + __webpack_require__(/*! ./assets/goku_fight.png */ \"./tests/spriteActor/assets/goku_fight.png\"),\n      //location of sprites\n      rps: 10,\n      //refresh per second\n      frames: [{\n        x: 0,\n        y: 9,\n        width: 59,\n        height: 78\n      }, {\n        x: 69,\n        y: 10,\n        width: 87,\n        height: 77\n      }, {\n        x: 164,\n        y: 0,\n        width: 51,\n        height: 88\n      }, {\n        x: 226,\n        y: 1,\n        width: 80,\n        height: 89\n      }]\n    }\n  }\n});\n\n//# sourceURL=webpack:///./tests/spriteActor/goku.js?");
+eval("module.exports = __webpack_require__.p + \"images/Fence.png\";\n\n//# sourceURL=webpack:///./tests/tileditor/assets/Fence.png?");
 
 /***/ }),
 
-/***/ "./tests/spriteActor/main.js":
-/*!***********************************!*\
-  !*** ./tests/spriteActor/main.js ***!
-  \***********************************/
+/***/ "./tests/tileditor/assets/Pylon.png":
+/*!******************************************!*\
+  !*** ./tests/tileditor/assets/Pylon.png ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"images/Pylon.png\";\n\n//# sourceURL=webpack:///./tests/tileditor/assets/Pylon.png?");
+
+/***/ }),
+
+/***/ "./tests/tileditor/assets/ali.png":
+/*!****************************************!*\
+  !*** ./tests/tileditor/assets/ali.png ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"images/ali.png\";\n\n//# sourceURL=webpack:///./tests/tileditor/assets/ali.png?");
+
+/***/ }),
+
+/***/ "./tests/tileditor/assets/car.png":
+/*!****************************************!*\
+  !*** ./tests/tileditor/assets/car.png ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"images/car.png\";\n\n//# sourceURL=webpack:///./tests/tileditor/assets/car.png?");
+
+/***/ }),
+
+/***/ "./tests/tileditor/assets/exchange_walking1.png":
+/*!******************************************************!*\
+  !*** ./tests/tileditor/assets/exchange_walking1.png ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"images/exchange_walking1.png\";\n\n//# sourceURL=webpack:///./tests/tileditor/assets/exchange_walking1.png?");
+
+/***/ }),
+
+/***/ "./tests/tileditor/assets/grill_walking.png":
+/*!**************************************************!*\
+  !*** ./tests/tileditor/assets/grill_walking.png ***!
+  \**************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"images/grill_walking.png\";\n\n//# sourceURL=webpack:///./tests/tileditor/assets/grill_walking.png?");
+
+/***/ }),
+
+/***/ "./tests/tileditor/assets/harley.png":
+/*!*******************************************!*\
+  !*** ./tests/tileditor/assets/harley.png ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"images/harley.png\";\n\n//# sourceURL=webpack:///./tests/tileditor/assets/harley.png?");
+
+/***/ }),
+
+/***/ "./tests/tileditor/assets/lan.png":
+/*!****************************************!*\
+  !*** ./tests/tileditor/assets/lan.png ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"images/lan.png\";\n\n//# sourceURL=webpack:///./tests/tileditor/assets/lan.png?");
+
+/***/ }),
+
+/***/ "./tests/tileditor/assets/mason.png":
+/*!******************************************!*\
+  !*** ./tests/tileditor/assets/mason.png ***!
+  \******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"images/mason.png\";\n\n//# sourceURL=webpack:///./tests/tileditor/assets/mason.png?");
+
+/***/ }),
+
+/***/ "./tests/tileditor/assets/protester.png":
+/*!**********************************************!*\
+  !*** ./tests/tileditor/assets/protester.png ***!
+  \**********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"images/protester.png\";\n\n//# sourceURL=webpack:///./tests/tileditor/assets/protester.png?");
+
+/***/ }),
+
+/***/ "./tests/tileditor/assets/rye_walking.png":
+/*!************************************************!*\
+  !*** ./tests/tileditor/assets/rye_walking.png ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"images/rye_walking.png\";\n\n//# sourceURL=webpack:///./tests/tileditor/assets/rye_walking.png?");
+
+/***/ }),
+
+/***/ "./tests/tileditor/assets/ta.png":
+/*!***************************************!*\
+  !*** ./tests/tileditor/assets/ta.png ***!
+  \***************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"images/ta.png\";\n\n//# sourceURL=webpack:///./tests/tileditor/assets/ta.png?");
+
+/***/ }),
+
+/***/ "./tests/tileditor/assets/umbrella.png":
+/*!*********************************************!*\
+  !*** ./tests/tileditor/assets/umbrella.png ***!
+  \*********************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"images/umbrella.png\";\n\n//# sourceURL=webpack:///./tests/tileditor/assets/umbrella.png?");
+
+/***/ }),
+
+/***/ "./tests/tileditor/assets/weeb_walking.png":
+/*!*************************************************!*\
+  !*** ./tests/tileditor/assets/weeb_walking.png ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+eval("module.exports = __webpack_require__.p + \"images/weeb_walking.png\";\n\n//# sourceURL=webpack:///./tests/tileditor/assets/weeb_walking.png?");
+
+/***/ }),
+
+/***/ "./tests/tileditor/main.js":
+/*!*********************************!*\
+  !*** ./tests/tileditor/main.js ***!
+  \*********************************/
 /*! no exports provided */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ \"./node_modules/@babel/runtime/helpers/classCallCheck.js\");\n/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/possibleConstructorReturn */ \"./node_modules/@babel/runtime/helpers/possibleConstructorReturn.js\");\n/* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/getPrototypeOf */ \"./node_modules/@babel/runtime/helpers/getPrototypeOf.js\");\n/* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/assertThisInitialized */ \"./node_modules/@babel/runtime/helpers/assertThisInitialized.js\");\n/* harmony import */ var _babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_3__);\n/* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime/helpers/inherits */ \"./node_modules/@babel/runtime/helpers/inherits.js\");\n/* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4__);\n/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime/helpers/defineProperty */ \"./node_modules/@babel/runtime/helpers/defineProperty.js\");\n/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_5__);\n/* harmony import */ var _src_lib_spriteActor__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../src/lib/spriteActor */ \"./src/lib/spriteActor.js\");\n/* harmony import */ var _goku__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./goku */ \"./tests/spriteActor/goku.js\");\n/* harmony import */ var _src_lib_stage__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../src/lib/stage */ \"./src/lib/stage.js\");\n/* harmony import */ var _src_lib_inputHandler__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../src/lib/inputHandler */ \"./src/lib/inputHandler.js\");\n\n\n\n\n\n\n\n\n\n\n\nvar Goku =\n/*#__PURE__*/\nfunction (_SpriteActor) {\n  _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_4___default()(Goku, _SpriteActor);\n\n  function Goku(bounds) {\n    var _this;\n\n    _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_0___default()(this, Goku);\n\n    _this = _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_1___default()(this, _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_2___default()(Goku).call(this, bounds, _goku__WEBPACK_IMPORTED_MODULE_7__[\"default\"]));\n\n    _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_5___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_3___default()(_this), \"update\", function (dt) {\n      if (_this.input.keys()['KeyD']) {\n        _this.destroy();\n      }\n\n      if (_this.input.keys()['KeyA']) {\n        _this.changeState(\"fight\");\n      }\n\n      if (_this.input.keys()['ArrowLeft']) {\n        //if (this.vx > -1)\n        _this.facing = \"left\";\n        _this.bounds.x -= 5;\n      } else if (_this.input.keys()['ArrowRight']) {\n        //if (this.vx < 1)\n        _this.facing = \"right\";\n        _this.bounds.x += 5;\n      }\n\n      if (_this.input.keys()['ArrowUp']) {\n        //if (this.vx > -1)\n        _this.bounds.y -= 5;\n      } else if (_this.input.keys()['ArrowDown']) {\n        //if (this.vx < 1)\n        _this.bounds.y += 5;\n      } //update position\n\n\n      _this.vy += _this.ay;\n      _this.bounds.y += _this.vy;\n      _this.vx += _this.ax;\n      _this.bounds.x += _this.vx;\n    });\n\n    _this.ay = 0;\n    _this.ax = 0;\n    _this.vx = 0;\n    _this.vy = 0;\n    _this.facing = \"right\";\n    _this.input = new _src_lib_inputHandler__WEBPACK_IMPORTED_MODULE_9__[\"default\"](document.querySelector('body'));\n\n    _this.input.startHandler();\n\n    return _this;\n  }\n\n  return Goku;\n}(_src_lib_spriteActor__WEBPACK_IMPORTED_MODULE_6__[\"default\"]);\n\nvar stage = new _src_lib_stage__WEBPACK_IMPORTED_MODULE_8__[\"default\"](document.querySelector('#main'));\nstage.ctx.imageSmoothingEnabled = false;\nstage.addActor(new Goku({\n  x: 100,\n  y: 100\n}));\nstage.start();\n\n//# sourceURL=webpack:///./tests/spriteActor/main.js?");
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ \"./node_modules/@babel/runtime/regenerator/index.js\");\n/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @babel/runtime/helpers/asyncToGenerator */ \"./node_modules/@babel/runtime/helpers/asyncToGenerator.js\");\n/* harmony import */ var _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1__);\n/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @babel/runtime/helpers/createClass */ \"./node_modules/@babel/runtime/helpers/createClass.js\");\n/* harmony import */ var _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_2__);\n/* harmony import */ var _babel_runtime_helpers_get__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @babel/runtime/helpers/get */ \"./node_modules/@babel/runtime/helpers/get.js\");\n/* harmony import */ var _babel_runtime_helpers_get__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_get__WEBPACK_IMPORTED_MODULE_3__);\n/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @babel/runtime/helpers/classCallCheck */ \"./node_modules/@babel/runtime/helpers/classCallCheck.js\");\n/* harmony import */ var _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_4__);\n/* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @babel/runtime/helpers/possibleConstructorReturn */ \"./node_modules/@babel/runtime/helpers/possibleConstructorReturn.js\");\n/* harmony import */ var _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_5__);\n/* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @babel/runtime/helpers/getPrototypeOf */ \"./node_modules/@babel/runtime/helpers/getPrototypeOf.js\");\n/* harmony import */ var _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_6__);\n/* harmony import */ var _babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @babel/runtime/helpers/assertThisInitialized */ \"./node_modules/@babel/runtime/helpers/assertThisInitialized.js\");\n/* harmony import */ var _babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7__);\n/* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! @babel/runtime/helpers/inherits */ \"./node_modules/@babel/runtime/helpers/inherits.js\");\n/* harmony import */ var _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_8___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_8__);\n/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! @babel/runtime/helpers/defineProperty */ \"./node_modules/@babel/runtime/helpers/defineProperty.js\");\n/* harmony import */ var _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_9___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_9__);\n/* harmony import */ var _src_lib_stage__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../src/lib/stage */ \"./src/lib/stage.js\");\n/* harmony import */ var _src_lib_actor__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../src/lib/actor */ \"./src/lib/actor.js\");\n/* harmony import */ var _src_lib_inputHandler__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../src/lib/inputHandler */ \"./src/lib/inputHandler.js\");\n/* harmony import */ var _src_lib_spriteActor__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../src/lib/spriteActor */ \"./src/lib/spriteActor.js\");\n/* harmony import */ var _spriteObjects_monkeySprite__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./spriteObjects/monkeySprite */ \"./tests/tileditor/spriteObjects/monkeySprite.js\");\n/* harmony import */ var _spriteObjects_weebSprite__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./spriteObjects/weebSprite */ \"./tests/tileditor/spriteObjects/weebSprite.js\");\n/* harmony import */ var _spriteObjects_grillSprite__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./spriteObjects/grillSprite */ \"./tests/tileditor/spriteObjects/grillSprite.js\");\n/* harmony import */ var _spriteObjects_ryeSprite__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./spriteObjects/ryeSprite */ \"./tests/tileditor/spriteObjects/ryeSprite.js\");\n/* harmony import */ var _spriteObjects_exchangeSprite__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./spriteObjects/exchangeSprite */ \"./tests/tileditor/spriteObjects/exchangeSprite.js\");\n/* harmony import */ var _spriteObjects_pylonSprite__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./spriteObjects/pylonSprite */ \"./tests/tileditor/spriteObjects/pylonSprite.js\");\n/* harmony import */ var _spriteObjects_carSprite__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./spriteObjects/carSprite */ \"./tests/tileditor/spriteObjects/carSprite.js\");\n/* harmony import */ var _spriteObjects_protesterSprite__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./spriteObjects/protesterSprite */ \"./tests/tileditor/spriteObjects/protesterSprite.js\");\n/* harmony import */ var _spriteObjects_umbrellaSprite__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./spriteObjects/umbrellaSprite */ \"./tests/tileditor/spriteObjects/umbrellaSprite.js\");\n/* harmony import */ var _spriteObjects_fenceSprite__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./spriteObjects/fenceSprite */ \"./tests/tileditor/spriteObjects/fenceSprite.js\");\n/* harmony import */ var _spriteObjects_masonSprite__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./spriteObjects/masonSprite */ \"./tests/tileditor/spriteObjects/masonSprite.js\");\n/* harmony import */ var _spriteObjects_aliSprite__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./spriteObjects/aliSprite */ \"./tests/tileditor/spriteObjects/aliSprite.js\");\n/* harmony import */ var _spriteObjects_harleySprite__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./spriteObjects/harleySprite */ \"./tests/tileditor/spriteObjects/harleySprite.js\");\n/* harmony import */ var _spriteObjects_lanSprite__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./spriteObjects/lanSprite */ \"./tests/tileditor/spriteObjects/lanSprite.js\");\n/* harmony import */ var _spriteObjects_taSprite__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./spriteObjects/taSprite */ \"./tests/tileditor/spriteObjects/taSprite.js\");\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n // import Engine from \"engine\";\n\nvar Grid =\n/*#__PURE__*/\nfunction (_Actor) {\n  _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_8___default()(Grid, _Actor);\n\n  function Grid(bx, by, tx, ty, color) {\n    var _this;\n\n    _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_4___default()(this, Grid);\n\n    _this = _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_5___default()(this, _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_6___default()(Grid).call(this));\n\n    _babel_runtime_helpers_defineProperty__WEBPACK_IMPORTED_MODULE_9___default()(_babel_runtime_helpers_assertThisInitialized__WEBPACK_IMPORTED_MODULE_7___default()(_this), \"render\", function () {\n      _this.ctx.beginPath();\n\n      _this.ctx.moveTo(_this.bx, _this.by);\n\n      _this.ctx.lineTo(_this.tx, _this.ty);\n\n      _this.ctx.strokeStyle = _this.color;\n\n      _this.ctx.stroke();\n    });\n\n    _this.bx = bx;\n    _this.by = by;\n    _this.tx = tx;\n    _this.ty = ty;\n    _this.color = color;\n    return _this;\n  }\n\n  return Grid;\n}(_src_lib_actor__WEBPACK_IMPORTED_MODULE_11__[\"default\"]);\n\nvar TileSprite =\n/*#__PURE__*/\nfunction (_SpriteActor) {\n  _babel_runtime_helpers_inherits__WEBPACK_IMPORTED_MODULE_8___default()(TileSprite, _SpriteActor);\n\n  function TileSprite(bounds) {\n    var _this2;\n\n    _babel_runtime_helpers_classCallCheck__WEBPACK_IMPORTED_MODULE_4___default()(this, TileSprite);\n\n    _this2 = _babel_runtime_helpers_possibleConstructorReturn__WEBPACK_IMPORTED_MODULE_5___default()(this, _babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_6___default()(TileSprite).call(this, bounds, _spriteObjects_monkeySprite__WEBPACK_IMPORTED_MODULE_14__[\"default\"]));\n    _this2.ay = _this2.ax = 0;\n    _this2.vx = 0;\n    _this2.vy = 0;\n    return _this2;\n  }\n\n  _babel_runtime_helpers_createClass__WEBPACK_IMPORTED_MODULE_2___default()(TileSprite, [{\n    key: \"render\",\n    value: function render(dt) {\n      _babel_runtime_helpers_get__WEBPACK_IMPORTED_MODULE_3___default()(_babel_runtime_helpers_getPrototypeOf__WEBPACK_IMPORTED_MODULE_6___default()(TileSprite.prototype), \"render\", this).call(this, dt);\n\n      console.log(this.bounds);\n    }\n  }]);\n\n  return TileSprite;\n}(_src_lib_spriteActor__WEBPACK_IMPORTED_MODULE_13__[\"default\"]);\n\nvar toggle = _spriteObjects_monkeySprite__WEBPACK_IMPORTED_MODULE_14__[\"default\"];\nvar fStage = new _src_lib_stage__WEBPACK_IMPORTED_MODULE_10__[\"default\"](document.querySelector(\"#fore\"));\nvar bStage = new _src_lib_stage__WEBPACK_IMPORTED_MODULE_10__[\"default\"](document.querySelector(\"#back\"));\nvar inp = new _src_lib_inputHandler__WEBPACK_IMPORTED_MODULE_12__[\"default\"](document.querySelector(\"#fore\"), {\n  mousedown: function () {\n    var _mousedown = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1___default()(\n    /*#__PURE__*/\n    _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {\n      var x, y, i, gridX, gridY, sprite;\n      return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {\n        while (1) {\n          switch (_context.prev = _context.next) {\n            case 0:\n              console.log(rows);\n              x = this.input.x - 12;\n              y = this.input.y;\n              console.log(x, y);\n              i = 0;\n\n            case 5:\n              if (!(i < rows.length)) {\n                _context.next = 17;\n                break;\n              }\n\n              if (!(x <= rows[i][0] && x >= rows[i][1] && y <= rows[i][2] && y >= rows[i][3])) {\n                _context.next = 14;\n                break;\n              }\n\n              console.log(true);\n              console.log(rows[i]);\n              gridX = Math.floor((x - rows[i][0]) / 32) * 32;\n              gridY = Math.floor((y - rows[i][3]) / 32) * 32; // sprite.bounds = {\n              //     x: gridX + rows[i][0] - 20,\n              //     y: rows[i][3] - 16,\n              //     height: 32,\n              //     width: 32,\n              // }\n\n              sprite = new _src_lib_spriteActor__WEBPACK_IMPORTED_MODULE_13__[\"default\"]({\n                x: gridX + rows[i][0] - 20,\n                y: rows[i][3] - 16,\n                height: 32,\n                width: 32\n              }, toggle);\n              fStage.addActor(sprite);\n              return _context.abrupt(\"break\", 17);\n\n            case 14:\n              i++;\n              _context.next = 5;\n              break;\n\n            case 17:\n            case \"end\":\n              return _context.stop();\n          }\n        }\n      }, _callee, this);\n    }));\n\n    function mousedown() {\n      return _mousedown.apply(this, arguments);\n    }\n\n    return mousedown;\n  }()\n});\ndocument.querySelector(\"#weebSprite\").addEventListener(\"click\", function () {\n  toggle = _spriteObjects_weebSprite__WEBPACK_IMPORTED_MODULE_15__[\"default\"];\n});\ndocument.querySelector(\"#monkeySprite\").addEventListener(\"click\", function () {\n  toggle = _spriteObjects_monkeySprite__WEBPACK_IMPORTED_MODULE_14__[\"default\"];\n});\ndocument.querySelector(\"#grillSprite\").addEventListener(\"click\", function () {\n  toggle = _spriteObjects_grillSprite__WEBPACK_IMPORTED_MODULE_16__[\"default\"];\n});\ndocument.querySelector(\"#exchangeSprite\").addEventListener(\"click\", function () {\n  toggle = _spriteObjects_exchangeSprite__WEBPACK_IMPORTED_MODULE_18__[\"default\"];\n});\ndocument.querySelector(\"#ryeSprite\").addEventListener(\"click\", function () {\n  toggle = _spriteObjects_ryeSprite__WEBPACK_IMPORTED_MODULE_17__[\"default\"];\n});\ndocument.querySelector(\"#pylon\").addEventListener(\"click\", function () {\n  toggle = _spriteObjects_pylonSprite__WEBPACK_IMPORTED_MODULE_19__[\"default\"];\n});\ndocument.querySelector(\"#umbrella\").addEventListener(\"click\", function () {\n  toggle = _spriteObjects_umbrellaSprite__WEBPACK_IMPORTED_MODULE_22__[\"default\"];\n});\ndocument.querySelector(\"#protester\").addEventListener(\"click\", function () {\n  toggle = _spriteObjects_protesterSprite__WEBPACK_IMPORTED_MODULE_21__[\"default\"];\n});\ndocument.querySelector(\"#car\").addEventListener(\"click\", function () {\n  toggle = _spriteObjects_carSprite__WEBPACK_IMPORTED_MODULE_20__[\"default\"];\n});\ndocument.querySelector(\"#fence\").addEventListener(\"click\", function () {\n  toggle = _spriteObjects_fenceSprite__WEBPACK_IMPORTED_MODULE_23__[\"default\"];\n});\ndocument.querySelector(\"#mason\").addEventListener(\"click\", function () {\n  toggle = _spriteObjects_masonSprite__WEBPACK_IMPORTED_MODULE_24__[\"default\"];\n});\ndocument.querySelector(\"#lan\").addEventListener(\"click\", function () {\n  toggle = _spriteObjects_lanSprite__WEBPACK_IMPORTED_MODULE_27__[\"default\"];\n});\ndocument.querySelector(\"#ta\").addEventListener(\"click\", function () {\n  toggle = _spriteObjects_taSprite__WEBPACK_IMPORTED_MODULE_28__[\"default\"];\n});\ndocument.querySelector(\"#ali\").addEventListener(\"click\", function () {\n  toggle = _spriteObjects_aliSprite__WEBPACK_IMPORTED_MODULE_25__[\"default\"];\n});\ndocument.querySelector(\"#harley\").addEventListener(\"click\", function () {\n  toggle = _spriteObjects_harleySprite__WEBPACK_IMPORTED_MODULE_26__[\"default\"];\n});\ndocument.querySelector(\"#exportJson\").addEventListener(\"click\", function () {\n  var file = new Blob([JSON.stringify(fStage.exportList)], {\n    type: \"application/json\"\n  });\n  if (window.navigator.msSaveOrOpenBlob) window.navigator.msSaveOrOpenBlob(file, filename);else {\n    var a = document.createElement(\"a\"),\n        url = URL.createObjectURL(file);\n    a.href = url;\n    a.download = \"export.JSON\";\n    document.body.appendChild(a);\n    a.click();\n    setTimeout(function () {\n      document.body.removeChild(a);\n      window.URL.revokeObjectURL(url);\n    }, 0);\n  }\n});\n\nfunction loadImage(_x) {\n  return _loadImage.apply(this, arguments);\n}\n\nfunction _loadImage() {\n  _loadImage = _babel_runtime_helpers_asyncToGenerator__WEBPACK_IMPORTED_MODULE_1___default()(\n  /*#__PURE__*/\n  _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2(src) {\n    var img;\n    return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {\n      while (1) {\n        switch (_context2.prev = _context2.next) {\n          case 0:\n            img = new Image();\n            img.src = src;\n            return _context2.abrupt(\"return\", new Promise(function (res, rej) {\n              img.onload = function () {\n                res(img);\n              };\n            }));\n\n          case 3:\n          case \"end\":\n            return _context2.stop();\n        }\n      }\n    }, _callee2);\n  }));\n  return _loadImage.apply(this, arguments);\n}\n\nfor (var _i = 0; _i <= 15; _i++) {\n  //drawing vertical lines\n  bStage.addActor(new Grid(600.032 + 32 * _i, 100, 20 + 32 * _i, 370.476, \"black\"));\n}\n\nvar rows = new Array(20);\nrows[0] = [1080, 600, 113.52, 98];\n\nfor (var i = 1; i < rows.length; i++) {\n  rows[i] = new Array(4);\n}\n\nfor (var i = 1; i < rows.length; i++) {\n  rows[i][0] = rows[i - 1][0] - 29.002;\n  rows[i][1] = rows[i - 1][1] - 29.002;\n  rows[i][2] = rows[i - 1][2] + 13.524;\n  rows[i][3] = rows[i - 1][3] + 13.524;\n}\n\nfor (var _i2 = 0; _i2 <= 20; _i2++) {\n  bStage.addActor(new Grid(20 + 29.002 * _i2, 370.476 - 13.524 * _i2, 500 + 29.002 * _i2, 370.476 - 13.524 * _i2, \"black\")); //console.log(20 + 29.002*i, 370.476 -13.524*i)\n}\n\nfStage.start();\nbStage.start();\ninp.startHandler();\n\n//# sourceURL=webpack:///./tests/tileditor/main.js?");
+
+/***/ }),
+
+/***/ "./tests/tileditor/spriteObjects/aliSprite.js":
+/*!****************************************************!*\
+  !*** ./tests/tileditor/spriteObjects/aliSprite.js ***!
+  \****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  name: \"ali-turret\",\n  properties: {},\n  states: {\n    idle: {\n      location: \"/\" + __webpack_require__(/*! ../../tileditor/assets/ali.png */ \"./tests/tileditor/assets/ali.png\")[\"default\"],\n      //location of sprites\n      rps: 5,\n      //refresh per second\n      loop: true,\n      //will continue to loop\n      frames: [{\n        x: 0,\n        y: 0,\n        width: 64,\n        height: 64\n      }, {\n        x: 65,\n        y: 0,\n        width: 64,\n        height: 64\n      }, {\n        x: 0,\n        y: 64,\n        width: 64,\n        height: 64\n      }, {\n        x: 64,\n        y: 64,\n        width: 64,\n        height: 64\n      }]\n    }\n  }\n});\n\n//# sourceURL=webpack:///./tests/tileditor/spriteObjects/aliSprite.js?");
+
+/***/ }),
+
+/***/ "./tests/tileditor/spriteObjects/carSprite.js":
+/*!****************************************************!*\
+  !*** ./tests/tileditor/spriteObjects/carSprite.js ***!
+  \****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  name: \"car-obstacle\",\n  properties: {},\n  states: {\n    idle: {\n      location: \"/\" + __webpack_require__(/*! ../../tileditor/assets/car.png */ \"./tests/tileditor/assets/car.png\"),\n      //location of sprites\n      rps: 5,\n      //refresh per second\n      loop: true,\n      //will continue to loop\n      frames: [{\n        x: 0,\n        y: 0,\n        width: 64,\n        height: 64\n      }, {\n        x: 0,\n        y: 0,\n        width: 64,\n        height: 64\n      }, {\n        x: 0,\n        y: 0,\n        width: 64,\n        height: 64\n      }, {\n        x: 0,\n        y: 0,\n        width: 64,\n        height: 64\n      }]\n    }\n  }\n});\n\n//# sourceURL=webpack:///./tests/tileditor/spriteObjects/carSprite.js?");
+
+/***/ }),
+
+/***/ "./tests/tileditor/spriteObjects/exchangeSprite.js":
+/*!*********************************************************!*\
+  !*** ./tests/tileditor/spriteObjects/exchangeSprite.js ***!
+  \*********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  name: \"exchange-student\",\n  properties: {},\n  states: {\n    idle: {\n      location: \"/\" + __webpack_require__(/*! ../../tileditor/assets/exchange_walking1.png */ \"./tests/tileditor/assets/exchange_walking1.png\"),\n      //location of sprites\n      rps: 5,\n      //refresh per second\n      loop: true,\n      //will continue to loop\n      frames: [{\n        x: 3,\n        y: 3,\n        width: 32,\n        height: 32\n      }, {\n        x: 32,\n        y: 1,\n        width: 32,\n        height: 32\n      }, {\n        x: 0,\n        y: 32,\n        width: 32,\n        height: 32\n      }, {\n        x: 32,\n        y: 30,\n        width: 32,\n        height: 32\n      }]\n    }\n  }\n});\n\n//# sourceURL=webpack:///./tests/tileditor/spriteObjects/exchangeSprite.js?");
+
+/***/ }),
+
+/***/ "./tests/tileditor/spriteObjects/fenceSprite.js":
+/*!******************************************************!*\
+  !*** ./tests/tileditor/spriteObjects/fenceSprite.js ***!
+  \******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  name: \"fence-obstacle\",\n  properties: {},\n  states: {\n    idle: {\n      location: \"/\" + __webpack_require__(/*! ../../tileditor/assets/Fence.png */ \"./tests/tileditor/assets/Fence.png\"),\n      //location of sprites\n      rps: 5,\n      //refresh per second\n      loop: true,\n      //will continue to loop\n      frames: [{\n        x: 0,\n        y: 0,\n        width: 64,\n        height: 64\n      }, {\n        x: 0,\n        y: 0,\n        width: 64,\n        height: 64\n      }, {\n        x: 0,\n        y: 0,\n        width: 64,\n        height: 64\n      }, {\n        x: 0,\n        y: 0,\n        width: 64,\n        height: 64\n      }]\n    }\n  }\n});\n\n//# sourceURL=webpack:///./tests/tileditor/spriteObjects/fenceSprite.js?");
+
+/***/ }),
+
+/***/ "./tests/tileditor/spriteObjects/grillSprite.js":
+/*!******************************************************!*\
+  !*** ./tests/tileditor/spriteObjects/grillSprite.js ***!
+  \******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  name: \"grill-student\",\n  properties: {},\n  states: {\n    idle: {\n      location: \"/\" + __webpack_require__(/*! ../assets/grill_walking.png */ \"./tests/tileditor/assets/grill_walking.png\"),\n      //location of sprites\n      rps: 5,\n      //refresh per second\n      loop: true,\n      //will continue to loop\n      frames: [{\n        x: 3,\n        y: 3,\n        width: 32,\n        height: 32\n      }, {\n        x: 32,\n        y: 1,\n        width: 32,\n        height: 32\n      }, {\n        x: 0,\n        y: 32,\n        width: 32,\n        height: 32\n      }, {\n        x: 32,\n        y: 30,\n        width: 32,\n        height: 32\n      }]\n    }\n  }\n});\n\n//# sourceURL=webpack:///./tests/tileditor/spriteObjects/grillSprite.js?");
+
+/***/ }),
+
+/***/ "./tests/tileditor/spriteObjects/harleySprite.js":
+/*!*******************************************************!*\
+  !*** ./tests/tileditor/spriteObjects/harleySprite.js ***!
+  \*******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  name: \"harley-turret\",\n  properties: {},\n  states: {\n    idle: {\n      location: \"/\" + __webpack_require__(/*! ../../tileditor/assets/harley.png */ \"./tests/tileditor/assets/harley.png\"),\n      //location of sprites\n      rps: 5,\n      //refresh per second\n      loop: true,\n      //will continue to loop\n      frames: [{\n        x: 0,\n        y: 0,\n        width: 64,\n        height: 64\n      }, {\n        x: 65,\n        y: 0,\n        width: 64,\n        height: 64\n      }, {\n        x: 0,\n        y: 64,\n        width: 64,\n        height: 64\n      }, {\n        x: 64,\n        y: 64,\n        width: 64,\n        height: 64\n      }]\n    }\n  }\n});\n\n//# sourceURL=webpack:///./tests/tileditor/spriteObjects/harleySprite.js?");
+
+/***/ }),
+
+/***/ "./tests/tileditor/spriteObjects/lanSprite.js":
+/*!****************************************************!*\
+  !*** ./tests/tileditor/spriteObjects/lanSprite.js ***!
+  \****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  name: \"lan-turret\",\n  properties: {},\n  states: {\n    idle: {\n      location: \"/\" + __webpack_require__(/*! ../../tileditor/assets/lan.png */ \"./tests/tileditor/assets/lan.png\"),\n      //location of sprites\n      rps: 5,\n      //refresh per second\n      loop: true,\n      //will continue to loop\n      frames: [{\n        x: 0,\n        y: 0,\n        width: 64,\n        height: 64\n      }, {\n        x: 65,\n        y: 0,\n        width: 64,\n        height: 64\n      }, {\n        x: 0,\n        y: 64,\n        width: 64,\n        height: 64\n      }, {\n        x: 64,\n        y: 64,\n        width: 64,\n        height: 64\n      }]\n    }\n  }\n});\n\n//# sourceURL=webpack:///./tests/tileditor/spriteObjects/lanSprite.js?");
+
+/***/ }),
+
+/***/ "./tests/tileditor/spriteObjects/masonSprite.js":
+/*!******************************************************!*\
+  !*** ./tests/tileditor/spriteObjects/masonSprite.js ***!
+  \******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  name: \"mason-turret\",\n  properties: {},\n  states: {\n    idle: {\n      location: \"/\" + __webpack_require__(/*! ../../tileditor/assets/mason.png */ \"./tests/tileditor/assets/mason.png\"),\n      //location of sprites\n      rps: 5,\n      //refresh per second\n      loop: true,\n      //will continue to loop\n      frames: [{\n        x: 0,\n        y: 0,\n        width: 64,\n        height: 64\n      }, {\n        x: 65,\n        y: 0,\n        width: 64,\n        height: 64\n      }, {\n        x: 0,\n        y: 64,\n        width: 64,\n        height: 64\n      }, {\n        x: 64,\n        y: 64,\n        width: 64,\n        height: 64\n      }]\n    }\n  }\n});\n\n//# sourceURL=webpack:///./tests/tileditor/spriteObjects/masonSprite.js?");
+
+/***/ }),
+
+/***/ "./tests/tileditor/spriteObjects/monkeySprite.js":
+/*!*******************************************************!*\
+  !*** ./tests/tileditor/spriteObjects/monkeySprite.js ***!
+  \*******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  name: \"monkey-student\",\n  properties: {},\n  states: {\n    idle: {\n      location: \"/\" + __webpack_require__(/*! ../../tileditor/assets/Code-Monkey.png */ \"./tests/tileditor/assets/Code-Monkey.png\"),\n      //location of sprites\n      rps: 5,\n      //refresh per second\n      loop: true,\n      //will continue to loop\n      frames: [{\n        x: 3,\n        y: 3,\n        width: 32,\n        height: 32\n      }, {\n        x: 32,\n        y: 1,\n        width: 32,\n        height: 32\n      }, {\n        x: 0,\n        y: 32,\n        width: 32,\n        height: 32\n      }, {\n        x: 32,\n        y: 32,\n        width: 32,\n        height: 32\n      }]\n    }\n  }\n});\n\n//# sourceURL=webpack:///./tests/tileditor/spriteObjects/monkeySprite.js?");
+
+/***/ }),
+
+/***/ "./tests/tileditor/spriteObjects/protesterSprite.js":
+/*!**********************************************************!*\
+  !*** ./tests/tileditor/spriteObjects/protesterSprite.js ***!
+  \**********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  name: \"protester-obstacle\",\n  properties: {},\n  states: {\n    idle: {\n      location: \"/\" + __webpack_require__(/*! ../../tileditor/assets/protester.png */ \"./tests/tileditor/assets/protester.png\"),\n      //location of sprites\n      rps: 5,\n      //refresh per second\n      loop: true,\n      //will continue to loop\n      frames: [{\n        x: 0,\n        y: 0,\n        width: 64,\n        height: 64\n      }, {\n        x: 65,\n        y: 0,\n        width: 64,\n        height: 64\n      }, {\n        x: 0,\n        y: 64,\n        width: 64,\n        height: 64\n      }, {\n        x: 64,\n        y: 64,\n        width: 64,\n        height: 64\n      }]\n    }\n  }\n});\n\n//# sourceURL=webpack:///./tests/tileditor/spriteObjects/protesterSprite.js?");
+
+/***/ }),
+
+/***/ "./tests/tileditor/spriteObjects/pylonSprite.js":
+/*!******************************************************!*\
+  !*** ./tests/tileditor/spriteObjects/pylonSprite.js ***!
+  \******************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  name: \"pylon-obstacle\",\n  properties: {},\n  states: {\n    idle: {\n      location: \"/\" + __webpack_require__(/*! ../../tileditor/assets/Pylon.png */ \"./tests/tileditor/assets/Pylon.png\"),\n      //location of sprites\n      rps: 5,\n      //refresh per second\n      loop: true,\n      //will continue to loop\n      frames: [{\n        x: 0,\n        y: 0,\n        width: 32,\n        height: 32\n      }, {\n        x: 0,\n        y: 0,\n        width: 32,\n        height: 32\n      }, {\n        x: 0,\n        y: 0,\n        width: 32,\n        height: 32\n      }, {\n        x: 0,\n        y: 0,\n        width: 32,\n        height: 32\n      }]\n    }\n  }\n});\n\n//# sourceURL=webpack:///./tests/tileditor/spriteObjects/pylonSprite.js?");
+
+/***/ }),
+
+/***/ "./tests/tileditor/spriteObjects/ryeSprite.js":
+/*!****************************************************!*\
+  !*** ./tests/tileditor/spriteObjects/ryeSprite.js ***!
+  \****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  name: \"normie-student\",\n  properties: {},\n  states: {\n    idle: {\n      location: \"/\" + __webpack_require__(/*! ../../tileditor/assets/rye_walking.png */ \"./tests/tileditor/assets/rye_walking.png\"),\n      //location of sprites\n      rps: 5,\n      //refresh per second\n      loop: true,\n      //will continue to loop\n      frames: [{\n        x: 3,\n        y: 3,\n        width: 32,\n        height: 32\n      }, {\n        x: 32,\n        y: 1,\n        width: 32,\n        height: 32\n      }, {\n        x: 0,\n        y: 32,\n        width: 32,\n        height: 32\n      }, {\n        x: 32,\n        y: 32,\n        width: 32,\n        height: 32\n      }]\n    }\n  }\n});\n\n//# sourceURL=webpack:///./tests/tileditor/spriteObjects/ryeSprite.js?");
+
+/***/ }),
+
+/***/ "./tests/tileditor/spriteObjects/taSprite.js":
+/*!***************************************************!*\
+  !*** ./tests/tileditor/spriteObjects/taSprite.js ***!
+  \***************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  name: \"ta-turret\",\n  properties: {},\n  states: {\n    idle: {\n      location: \"/\" + __webpack_require__(/*! ../../tileditor/assets/ta.png */ \"./tests/tileditor/assets/ta.png\"),\n      //location of sprites\n      rps: 5,\n      //refresh per second\n      loop: true,\n      //will continue to loop\n      frames: [{\n        x: 0,\n        y: 0,\n        width: 64,\n        height: 64\n      }, {\n        x: 65,\n        y: 0,\n        width: 64,\n        height: 64\n      }, {\n        x: 0,\n        y: 64,\n        width: 64,\n        height: 64\n      }, {\n        x: 64,\n        y: 64,\n        width: 64,\n        height: 64\n      }]\n    }\n  }\n});\n\n//# sourceURL=webpack:///./tests/tileditor/spriteObjects/taSprite.js?");
+
+/***/ }),
+
+/***/ "./tests/tileditor/spriteObjects/umbrellaSprite.js":
+/*!*********************************************************!*\
+  !*** ./tests/tileditor/spriteObjects/umbrellaSprite.js ***!
+  \*********************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  name: \"umbrella-obstacle\",\n  properties: {},\n  states: {\n    idle: {\n      location: \"/\" + __webpack_require__(/*! ../../tileditor/assets/umbrella.png */ \"./tests/tileditor/assets/umbrella.png\"),\n      //location of sprites\n      rps: 5,\n      //refresh per second\n      loop: true,\n      //will continue to loop\n      frames: [{\n        x: 0,\n        y: 0,\n        width: 64,\n        height: 64\n      }, {\n        x: 65,\n        y: 0,\n        width: 64,\n        height: 64\n      }, {\n        x: 0,\n        y: 64,\n        width: 64,\n        height: 64\n      }, {\n        x: 64,\n        y: 64,\n        width: 64,\n        height: 64\n      }]\n    }\n  }\n});\n\n//# sourceURL=webpack:///./tests/tileditor/spriteObjects/umbrellaSprite.js?");
+
+/***/ }),
+
+/***/ "./tests/tileditor/spriteObjects/weebSprite.js":
+/*!*****************************************************!*\
+  !*** ./tests/tileditor/spriteObjects/weebSprite.js ***!
+  \*****************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ __webpack_exports__[\"default\"] = ({\n  name: \"weeb-student\",\n  properties: {},\n  states: {\n    idle: {\n      location: \"/\" + __webpack_require__(/*! ../../tileditor/assets/weeb_walking.png */ \"./tests/tileditor/assets/weeb_walking.png\"),\n      //location of sprites\n      rps: 5,\n      //refresh per second\n      loop: true,\n      //will continue to loop\n      frames: [{\n        x: 3,\n        y: 3,\n        width: 32,\n        height: 32\n      }, {\n        x: 32,\n        y: 1,\n        width: 32,\n        height: 32\n      }, {\n        x: 0,\n        y: 32,\n        width: 32,\n        height: 32\n      }, {\n        x: 32,\n        y: 30,\n        width: 32,\n        height: 32\n      }]\n    }\n  }\n});\n\n//# sourceURL=webpack:///./tests/tileditor/spriteObjects/weebSprite.js?");
 
 /***/ })
 
