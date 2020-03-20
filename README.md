@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-<<<<<<< HEAD
 # engine
 Game Engine - Currently on version MASON
 
@@ -39,9 +37,7 @@ npm run build
 
 ## Looking to Contribute?
 ### Check out the contributors guide [here](docs/contributions.md)
-=======
-=======
->>>>>>> aa1851b4889d88b342d926db7ea224c2932cf97f
+
 # engine
 Game Engine - Currently on version MASON
 
@@ -86,7 +82,4 @@ npm run build
 
 ## Looking to Contribute?
 ### Check out the contributors guide [here](docs/contributions.md)
-<<<<<<< HEAD
->>>>>>> origin/develop
-=======
->>>>>>> aa1851b4889d88b342d926db7ea224c2932cf97f
+
