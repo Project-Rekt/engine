@@ -3,12 +3,26 @@
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-        <link href="https://fonts.googleapis.com/css?family=Short+Stack&display=swap" rel="stylesheet"> 
-        <title >Tile Editor</title>
+        <link href="https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap" rel="stylesheet">
+        
+        <!-- minify -->
+        <link href="https://unpkg.com/nes.css@2.3.0/css/nes.min.css" rel="stylesheet" />
+        
+        <title>Tile Editor</title>
         <style>
-            .flex-container{
-                display: flex;
-                flex-direction: row;
+            html{
+                font-size: smaller;
+                background-image: url(https://i.imgur.com/2gfwG.png);
+                background-repeat: no-repeat;
+                height: 100%;
+                background-position:center;
+                background-size: cover;
+            }
+            .flex-container {
+                flex-direction: column;
+                position: absolute;
+                z-index: 1000;
+                right: 0;
             }
             
             .item-menu{
@@ -17,6 +31,7 @@
 
             }
             .icon-bar {
+                flex-direction: column;
                 width:75%;
                 background-color: #555;
                 overflow: auto;
@@ -35,23 +50,13 @@
             .icon-bar a:hover {
                 background-color: rgb(177, 116, 3);
             }
-            .active {
-                background-color: #4CAF50;
-            }
-            .weeb:before{
-                background-image :url("tests/tileditor/assets/weeb.png")
-            }
-            div.gallery:hover{
-                border:1px solid #777;
 
-            }
             .icon-bar-options{
                 width: 500px;
             }
             .icon{
-                width: 100px;
+                width: 160px;
                 height: 50px;
-                border: 1px solid black;
             }
             .student{
                 display:none;
@@ -62,115 +67,99 @@
             .tower{
                 display:none;
             }
-            
+            .settings{
+                display:none;
+            }
             canvas {
                 position: absolute;
             }
-
-            .flex-container {
-                flex-direction: column;
-                position: absolute;
-                z-index: 1000;
-                right: 0;
+            .gradient{
+                background: rgb(89,122,238);
+                background: linear-gradient(180deg, rgba(89,122,238,1) 0%, rgba(121,149,249,1) 20%, rgba(121,201,249,1) 100%);
             }
         </style>
     </head>
     <body>
-        <div class="jumbotron jumbotron-fluid">
+        <div class="jumbotron jumbotron-fluid gradient">
             <div class="container">
-              <h1 class="display-4" style = "font-family: 'Short Stack', cursive;">Project Rekt - Tile Editor</h1>
+              <h1 class="display-4" style="font-family:'Press Start 2P', cursive;">Project Rekt - Tile Editor</h1>
               <p class="lead">Playground for imagining new ways the Ryerson Administration can make it difficult to graduate</p>
             </div>
-          </div>
+        </div>
           <div>
-            <canvas id="back" width= 1100.037 height=470.476 style="background-color: white;"></canvas>
+            <canvas id="back" width= 1100.037 height=470.476></canvas>
             <canvas id="fore" width= 1100.037 height=470.476 style="background-color: rgba(0,0,0,0);"></canvas>
         </div>
         <!-- <input type="file" id="myFile"> -->
         <div class="flex-container">
             <div class="icon-bar">
-                <a>
-                    <img src=<%="/"+require("./assets/icons/students.png")%> alt="students"></img>
-                    <button onclick = "showStudents()" id = "studentIcon" class = "btn btn-primary" width="300" height="100"></button>
-                </a> 
-                <a>
-                    <img src=<%="/"+require("./assets/icons/obstacle.png")%> alt="obstacles"></img>
-                    <button onclick = "showObstacles()" id = "obstacleIcon" class = "btn btn-primary" width="300" height="100"></button>
-                </a> 
-                <a>
-                    <img src=<%="/"+require("./assets/icons/tower.png")%> alt="towers"></img>
-                    <button onclick = "showTowers()" id = "towerIcon" class = "btn btn-primary" width="300" height="100"></button>
+                <br>
+                <h5 style="text-align:center; color:white; font-family:'Press Start 2P', cursive;">Objects</h3>
+                <div>
+                    <a onclick="show('student')">
+                        <img src=<%="/"+require("./assets/icons/students.png")%> title="Students" alt="students"></img>
+                    </a>
+                </div>
+                <div>
+                    <a onclick="show('obstacle')">
+                        <img src=<%="/"+require("./assets/icons/obstacle.png")%> title="Obstacles" alt="obstacles"></img>
+                    </a> 
+                </div>
+                <div>
+                <a onclick="show('tower')">
+                    <img src=<%="/"+require("./assets/icons/tower.png")%> title="Towers" alt="towers"></img>
                 </a>
-                <a>
-                    <button  id = "exportJson" class = "btn btn-primary" width="300" height=100%>export</button>
-                </a> 
+                <a onclick="show('settings')">
+                    <img src=<%="/"+require("./assets/icons/settings.png")%> title="Settings" alt="settings"></img>
+                </a>
+                </div>
             </div>
-            <div class = "icon-bar-options">
-                <button id = "weebSprite" class ="btn btn-primary button-image icon  student">weeb</button>
-                <button id = "grillSprite" class ="btn btn-primary button-image icon  student">gril</button>
-                <button id = "exchangeSprite" class ="btn btn-primary button-image icon  student">fob</button>
-                <button id = "ryeSprite" class ="btn btn-primary button-image icon  student">normie</button>
-                <button id = "monkeySprite" class ="btn btn-primary button-image icon  student">monkey</button>
+            <div class="icon-bar-options">
+                <button type="button" id="weebSprite" class="nes-btn is-primary button-image icon student">Weeb</button>
+                <button id="grillSprite" class="nes-btn is-primary button-image icon  student">Gril</button>
+                <button id="exchangeSprite" class="nes-btn is-primary button-image icon  student">FOB</button>
+                <button id="ryeSprite" class="nes-btn is-primary button-image icon  student">Normie</button>
+                <button id="monkeySprite" class="nes-btn is-primary button-image icon  student">Monkey</button>
 
-                <button id = "pylon" class ="btn btn-danger button-image icon  obstacle">pylon</button>
-                <button id = "car" class ="btn btn-danger button-image icon  obstacle">car</button>
-                <button id = "protester" class ="btn btn-danger button-image icon  obstacle">protester</button>
-                <button id = "umbrella" class ="btn btn-danger button-image icon  obstacle">umbrella</button>
-                <button id = "fence" class ="btn btn-danger button-image icon  obstacle">fence</button>
+                <button id="pylon" class="nes-btn is-error button-image icon  obstacle">Pylon</button>
+                <button id="car" class="nes-btn is-error button-image icon  obstacle">Car</button>
+                <button id="protester" class="nes-btn is-error button-image icon  obstacle">Protester</button>
+                <button id="umbrella" class="nes-btn is-error button-image icon  obstacle">Umbrella</button>
+                <button id="fence" class="nes-btn is-error button-image icon  obstacle">Fence</button>
 
-                <button id = "mason" class ="btn btn-success button-image icon  tower">mason</button>
-                <button id = "lan" class ="btn btn-success button-image icon  tower">lan</button>
-                <button id = "ta" class ="btn btn-success button-image icon  tower">TA</button>
-                <button id = "ali" class ="btn btn-success button-image icon  tower">ali</button>
-                <button id = "harley" class ="btn btn-success button-image icon  tower">harley</button>
+                <button id="mason" class="nes-btn is-success button-image icon  tower">Mason</button>
+                <button id="lan" class="nes-btn is-success button-image icon  tower">Lan</button>
+                <button id="ta" class="nes-btn is-success button-image icon  tower">TA</button>
+                <button id="ali" class="nes-btn is-success button-image icon  tower">Ali</button>
+                <button id="harley" class="nes-btn is-success button-image icon  tower">Harley</button>
                 
+                <button id="exportJson" class="nes-btn is-warning button-image icon settings">Export</button>
             </div>
         </div>
-        
-        
+        <script>
+            function show(option){
+                var elements = document.getElementsByClassName(option)
+                for (var i = 0; i < elements.length; i++) {
+                    elements[i].style.display = elements[i].style.display == 'inline' ? 'none' : 'inline';
+                }
+            }
+
+            function draw(){
+                var drawing = document.getElementById('main')
+                var con = drawing.getContext("2d")
+                var map = document.getElementById("myFile")
+                con.drawImage(map, 0, 0, 0, 0)
+            }
+
+            async function loadImage(src) {
+                let img = new Image();
+                img.src = src;
+                return new Promise((res, rej) => {
+                    img.onload = () => {
+                    res(img);
+        };
+      });
+    }
+        </script>
     </body>
-    <script>
-
-        function showStudents(){
-            var elements = document.getElementsByClassName("student");
-            for (var i = 0; i < elements.length; i++) {
-                elements[i].style.display = elements[i].style.display == 'inline' ? 'none' : 'inline';
-            }
-            
-        }
-        function showObstacles(){
-            var elements = document.getElementsByClassName("obstacle");
-            for (var i = 0; i < elements.length; i++) {
-                elements[i].style.display = elements[i].style.display == 'inline' ? 'none' : 'inline';
-            }
-            
-        }
-        function showTowers(){
-            var elements = document.getElementsByClassName("tower");
-            for (var i = 0; i < elements.length; i++) {
-                elements[i].style.display = elements[i].style.display == 'inline' ? 'none' : 'inline';
-            }
-            
-        }
-        
-
-        function draw(){
-            var drawing = document.getElementById('main')
-            var con = drawing.getContext("2d")
-            var map = document.getElementById("myFile")
-            con.drawImage(map, 0, 0, 0, 0)
-        }
-        function select(){
-
-        }
-        async function loadImage(src) {
-            let img = new Image();
-            img.src = src;
-            return new Promise((res, rej) => {
-                img.onload = () => {
-                res(img);
-    };
-  });
-}
-    </script>
 </html>
