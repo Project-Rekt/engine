@@ -3,6 +3,7 @@
     "version": "$VERSION",
     "description": "Engine for Project Rekt",
     "main": "export.js",
+    "publishConfig": { "registry": "https://npm.pkg.github.com/" },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/Project-Rekt/engine.git"
