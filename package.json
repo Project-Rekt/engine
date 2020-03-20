@@ -1,8 +1,11 @@
 {
     "name": "engine",
-    "version": "0.0.2",
+    "version": "0.0.7",
     "description": "Engine for Project Rekt",
     "main": "export.js",
+    "publishConfig": {
+        "registry": "https://npm.pkg.github.com/"
+    },
     "repository": {
         "type": "git",
         "url": "git+https://github.com/Project-Rekt/engine.git"

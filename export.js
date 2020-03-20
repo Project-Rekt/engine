@@ -1,5 +1,7 @@
 "use strict";
 
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
@@ -10,8 +12,6 @@ var _actor = _interopRequireDefault(require("./lib/actor"));
 var _stage = _interopRequireDefault(require("./lib/stage"));
 
 var _inputHandler = _interopRequireDefault(require("./lib/inputHandler"));
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
 
 var _default = {
   Actor: _actor["default"],
