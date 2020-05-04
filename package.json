@@ -1,6 +1,6 @@
 {
     "name": "engine",
-    "version": "0.0.9",
+    "version": "0.1.0",
     "description": "Engine for Project Rekt",
     "main": "export.js",
     "publishConfig": {
