@@ -68,6 +68,18 @@ export default class Stage {
         // console.log("EXPORT LIST - " + JSON.stringify(this.exportList))
     }
 
+    changeIndex = (actor, zIndex) => {
+        for(let i = 0; i < this.children.length; i++) {
+            for(let j = 0; j < this.children[i].length; j++) {
+                if(this.children[i][j] === actor) {
+                    delete this.children[i][j];
+                    this.children[zIndex] = actor
+                    return;
+                }
+            }
+        }
+    }
+
     removeActor = actor => {
         let index = this.children[actor.zIndex].findIndex(a => a === actor)
         this.children[actor.zIndex].splice(index, 1)

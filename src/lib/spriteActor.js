@@ -39,7 +39,7 @@ export default class SpriteActor extends Actor {
         this.properties = spriteObj.properties
         this.states = spriteObj.states
         if (this.states != {} && this.properties != {}) {
-            ;(async () => {
+            (async () => {
                 await Promise.all(
                     Object.keys(this.states).map(async s => {
                         let img = await loadImage(this.states[s].location)
@@ -53,7 +53,7 @@ export default class SpriteActor extends Actor {
 
     create = () => {
         if (this.states != {} && this.properties != {}) {
-            ;(async () => {
+            (async () => {
                 await Promise.all(
                     Object.keys(this.states).map(async s => {
                         let img = await loadImage(this.states[s].location)
